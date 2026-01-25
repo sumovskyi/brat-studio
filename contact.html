@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact BRAT Studio - Book a program, request corporate training, or get in touch. Toronto, Canada.">
+    <title>Contact | BRAT Studio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">BRAT<span>.</span>Studio</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="about.html" class="nav__link">About</a>
+                <a href="corporate.html" class="nav__link">Corporate</a>
+                <a href="masterclass.html" class="nav__link">Programs</a>
+                <a href="contact.html" class="btn btn--primary nav__link--active">Join the Studio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero hero--short">
+        <div class="hero__bg"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <p class="hero__tagline">Let's Connect</p>
+            <h1 class="hero__title">Take the Stage</h1>
+            <p class="hero__subtitle">Ready to transform? Let's find the right program for your journey.</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="gap: 4rem;">
+                <!-- Form -->
+                <div data-animate>
+                    <h2 class="mb-4">Book a Program</h2>
+                    <p class="mb-8" style="color: var(--color-gray-400);">
+                        Fill out the form and we'll get back to you within 24 hours to discuss your goals.
+                    </p>
+
+                    <form id="booking-form">
+                        <div class="grid grid-2">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-input"
+                                placeholder="+1 (___) ___-____">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="program">Program Interest *</label>
+                            <select id="program" name="program" class="form-select" required>
+                                <option value="">Select a program</option>
+                                <option value="masterclass">Masterclass (Group)</option>
+                                <option value="coaching">1:1 Coaching</option>
+                                <option value="studio">Studio Labs</option>
+                                <option value="corporate">Corporate Training</option>
+                                <option value="courses">Online Courses (Waitlist)</option>
+                                <option value="not-sure">Not sure — help me choose</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Tell us about your goals</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5"
+                                placeholder="What are you hoping to achieve? Any specific challenges or goals?"></textarea>
+                        </div>
+
+                        <input type="hidden" id="source" name="source" value="contact-page">
+
+                        <button type="submit" class="btn btn--primary btn--large" style="width: 100%;">
+                            Take the Stage
+                        </button>
+
+                        <p
+                            style="margin-top: 1rem; font-size: var(--text-sm); color: var(--color-gray-400); text-align: center;">
+                            We respect your privacy. No spam, ever.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-animate>
+                    <h2 class="mb-4">Get in Touch</h2>
+                    <p class="mb-8" style="color: var(--color-gray-400);">
+                        Prefer to reach out directly? We're here for you.
+                    </p>
+
+                    <div class="mb-8">
+                        <h4 class="mb-2" style="color: var(--color-accent-light);">📍 Location</h4>
+                        <p style="color: var(--color-gray-300);">Toronto, Ontario, Canada</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="mb-2" style="color: var(--color-accent-light);">✉️ Email</h4>
+                        <a href="mailto:hello@bratstudio.ca"
+                            style="color: var(--color-gray-300);">hello@bratstudio.ca</a>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="mb-2" style="color: var(--color-accent-light);">🌐 Languages</h4>
+                        <p style="color: var(--color-gray-300);">We work in English, Ukrainian, and Russian.</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h4 class="mb-2" style="color: var(--color-accent-light);">📱 Follow</h4>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="#" class="btn btn--outline" style="padding: 0.5rem 1rem;">Instagram</a>
+                            <a href="#" class="btn btn--outline" style="padding: 0.5rem 1rem;">LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Payment Info -->
+                    <div class="mt-12"
+                        style="padding: 1.5rem; background: var(--color-gray-800); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05);">
+                        <h4 class="mb-4">Payment Options</h4>
+                        <p style="color: var(--color-gray-400); font-size: var(--text-sm); margin-bottom: 1rem;">
+                            After booking confirmation, we accept:
+                        </p>
+                        <ul style="list-style: none; color: var(--color-gray-300); line-height: 2;">
+                            <li>🏦 Interac e-Transfer</li>
+                            <li>💵 Cash (in-person)</li>
+                            <li>📄 Invoice (corporate)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--dark">
+        <div class="container container--narrow">
+            <div class="section-header" data-animate>
+                <p class="section-header__label">Questions</p>
+                <h2 class="section-header__title">Frequently Asked</h2>
+            </div>
+
+            <div data-animate>
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-accent-light); margin-bottom: 0.5rem;">Do I need acting experience?
+                    </h4>
+                    <p style="color: var(--color-gray-300);">No! Our programs are designed for professionals,
+                        entrepreneurs, and anyone who wants to communicate more effectively. No acting background
+                        required.</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-accent-light); margin-bottom: 0.5rem;">What if I'm nervous or
+                        introverted?</h4>
+                    <p style="color: var(--color-gray-300);">Perfect — that's exactly who we work with. Our approach
+                        creates a safe, supportive space. Many of our most transformed clients started exactly where you
+                        are.</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-accent-light); margin-bottom: 0.5rem;">How do I know which program is
+                        right for me?</h4>
+                    <p style="color: var(--color-gray-300);">Select "Not sure — help me choose" in the form, and we'll
+                        schedule a free consultation to discuss your goals.</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--color-accent-light); margin-bottom: 0.5rem;">Do you offer online sessions?
+                    </h4>
+                    <p style="color: var(--color-gray-300);">Yes! 1:1 Coaching is available via video call. Group
+                        programs are currently in-person in Toronto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="index.html" class="logo">BRAT<span>.</span>Studio</a>
+                    <p>A creative space for communication, confidence, and self-expression through acting techniques.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer__title">Programs</h4>
+                    <ul class="footer__links">
+                        <li><a href="masterclass.html">Masterclass</a></li>
+                        <li><a href="coaching.html">1:1 Coaching</a></li>
+                        <li><a href="studio.html">Studio Labs</a></li>
+                        <li><a href="corporate.html">Corporate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Languages</h4>
+                    <ul class="footer__links">
+                        <li>🇬🇧 English</li>
+                        <li>🇺🇦 Українська</li>
+                        <li>🇷🇺 Русский</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2026 BRAT Studio. Toronto, Canada.</p>
+                <div class="footer__social">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Email">✉️</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script>
+        // Pre-select program from URL parameter
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const program = urlParams.get('program');
+            if (program) {
+                const select = document.getElementById('program');
+                if (select) {
+                    select.value = program;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

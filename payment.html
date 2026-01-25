@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Payment confirmation - Complete your BRAT Studio booking with e-Transfer or cash payment.">
+    <title>Payment | BRAT Studio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">BRAT<span>.</span>Studio</a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="about.html" class="nav__link">About</a>
+                <a href="corporate.html" class="nav__link">Corporate</a>
+                <a href="masterclass.html" class="nav__link">Programs</a>
+                <a href="contact.html" class="btn btn--primary">Join the Studio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Confirmation -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero__bg"></div>
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">✓</div>
+            <p class="hero__tagline">Thank You!</p>
+            <h1 class="hero__title">Booking Received</h1>
+            <p class="hero__subtitle">We'll be in touch within 24 hours to confirm your spot and discuss next steps.</p>
+        </div>
+    </section>
+
+    <!-- Payment Instructions -->
+    <section class="section">
+        <div class="container container--narrow">
+            <div class="section-header" data-animate>
+                <h2 class="section-header__title">Complete Your Payment</h2>
+                <p class="section-header__text">
+                    Once we confirm your booking, you can pay using one of the options below.
+                </p>
+            </div>
+
+            <div class="grid grid-2" style="gap: 2rem;" data-animate>
+                <div class="service-card" style="text-align: left; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏦</div>
+                    <h4 class="mb-4">Interac e-Transfer</h4>
+                    <p style="color: var(--color-gray-400); margin-bottom: 1rem;">
+                        The easiest way to pay in Canada
+                    </p>
+                    <ul style="list-style: none; color: var(--color-gray-300); line-height: 2;">
+                        <li>1. Open your banking app</li>
+                        <li>2. Select Interac e-Transfer</li>
+                        <li>3. Send to: <strong>hello@bratstudio.ca</strong></li>
+                        <li>4. Add your name in the message</li>
+                    </ul>
+                </div>
+
+                <div class="service-card" style="text-align: left; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💵</div>
+                    <h4 class="mb-4">Cash Payment</h4>
+                    <p style="color: var(--color-gray-400); margin-bottom: 1rem;">
+                        Pay in person at your first session
+                    </p>
+                    <ul style="list-style: none; color: var(--color-gray-300); line-height: 2;">
+                        <li>• Available for in-person programs</li>
+                        <li>• Payment due at first session</li>
+                        <li>• Confirm with us first</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Corporate Note -->
+            <div class="mt-12 text-center" data-animate
+                style="padding: 2rem; background: var(--color-gray-800); border-radius: var(--radius-lg);">
+                <h4 class="mb-4">Corporate Clients</h4>
+                <p style="color: var(--color-gray-400);">
+                    For corporate training and invoiced payments, we'll send a formal quote and invoice after our
+                    discovery call.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens Next -->
+    <section class="section section--dark">
+        <div class="container container--narrow text-center">
+            <div class="section-header" data-animate>
+                <p class="section-header__label">Timeline</p>
+                <h2 class="section-header__title">What Happens Next</h2>
+            </div>
+
+            <div class="grid grid-3" data-animate>
+                <div>
+                    <div
+                        style="width: 50px; height: 50px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.25rem; font-weight: bold;">
+                        1</div>
+                    <h5 class="mb-2">Email Confirmation</h5>
+                    <p style="color: var(--color-gray-400); font-size: var(--text-sm);">We'll email you within 24 hours
+                    </p>
+                </div>
+                <div>
+                    <div
+                        style="width: 50px; height: 50px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.25rem; font-weight: bold;">
+                        2</div>
+                    <h5 class="mb-2">Payment</h5>
+                    <p style="color: var(--color-gray-400); font-size: var(--text-sm);">Complete payment to secure your
+                        spot</p>
+                </div>
+                <div>
+                    <div
+                        style="width: 50px; height: 50px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.25rem; font-weight: bold;">
+                        3</div>
+                    <h5 class="mb-2">Schedule</h5>
+                    <p style="color: var(--color-gray-400); font-size: var(--text-sm);">We'll share dates and
+                        preparation info</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="section text-center">
+        <div class="container">
+            <a href="index.html" class="btn btn--outline btn--large">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="index.html" class="logo">BRAT<span>.</span>Studio</a>
+                    <p>A creative space for communication, confidence, and self-expression through acting techniques.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer__title">Programs</h4>
+                    <ul class="footer__links">
+                        <li><a href="masterclass.html">Masterclass</a></li>
+                        <li><a href="coaching.html">1:1 Coaching</a></li>
+                        <li><a href="studio.html">Studio Labs</a></li>
+                        <li><a href="corporate.html">Corporate</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Company</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Languages</h4>
+                    <ul class="footer__links">
+                        <li>🇬🇧 English</li>
+                        <li>🇺🇦 Українська</li>
+                        <li>🇷🇺 Русский</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2026 BRAT Studio. Toronto, Canada.</p>
+                <div class="footer__social">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Email">✉️</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

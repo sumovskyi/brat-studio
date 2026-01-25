@@ -1,0 +1,12 @@
+# BRAT Studio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bratstudio.ca/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow admin/private areas (none for this static site)
+# Disallow: /admin/
