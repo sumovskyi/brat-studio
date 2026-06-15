@@ -191,8 +191,129 @@ function initRegistrationModal() {
   });
 }
 
+// -------------------- Testimonial Slider --------------------
+function initTestimonialSlider() {
+  const track = document.querySelector('.testimonials-track');
+
+  if (!track) return;
+
+  let isTransitioning = false;
+  let autoSlideInterval;
+
+  function getSlideDimensions() {
+    const firstSlide = track.querySelector('.testimonial-slide');
+    if (!firstSlide) return { width: 340, gap: 80 };
+    const width = firstSlide.offsetWidth;
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 80;
+    return { width, gap };
+  }
+
+  function updateClasses() {
+    const currentSlides = track.children;
+    for (let i = 0; i < currentSlides.length; i++) {
+      currentSlides[i].classList.remove(
+        'slide-peeking-left',
+        'slide-left',
+        'slide-center',
+        'slide-right',
+        'slide-peeking-right'
+      );
+      if (i === 0) {
+        currentSlides[i].classList.add('slide-peeking-left');
+      } else if (i === 1) {
+        currentSlides[i].classList.add('slide-left');
+      } else if (i === 2) {
+        currentSlides[i].classList.add('slide-center');
+      } else if (i === 3) {
+        currentSlides[i].classList.add('slide-right');
+      } else if (i === 4) {
+        currentSlides[i].classList.add('slide-peeking-right');
+      }
+    }
+  }
+
+  function setInitialPosition() {
+    const { width, gap } = getSlideDimensions();
+    const step = width + gap;
+    track.style.transition = 'none';
+    track.style.transform = `translateX(${-step}px)`;
+  }
+
+  function slide() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+
+    const { width, gap } = getSlideDimensions();
+    const step = width + gap;
+
+    const currentSlides = track.children;
+    let clone;
+    if (currentSlides.length >= 5) {
+      // Clone the first slide (which is currently hidden on the left) 
+      // and append it to the end so it is visible entering from the right
+      clone = currentSlides[0].cloneNode(true);
+      clone.className = 'testimonial-slide slide-peeking-right';
+      track.appendChild(clone);
+
+      currentSlides[0].classList.remove('slide-peeking-left');
+      currentSlides[1].classList.replace('slide-left', 'slide-peeking-left');
+      currentSlides[2].classList.replace('slide-center', 'slide-left');
+      currentSlides[3].classList.replace('slide-right', 'slide-center');
+      currentSlides[4].classList.replace('slide-peeking-right', 'slide-right');
+    }
+
+    track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+    track.style.transform = `translateX(${-2 * step}px)`;
+
+    setTimeout(() => {
+      track.classList.add('no-transition');
+      
+      if (clone) {
+        // Append the actual first slide to the end, then remove the clone
+        track.appendChild(currentSlides[0]);
+        clone.remove();
+      } else {
+        track.appendChild(currentSlides[0]);
+      }
+      
+      track.style.transform = `translateX(${-step}px)`;
+      updateClasses();
+      
+      track.offsetHeight; // force reflow
+      track.classList.remove('no-transition');
+      
+      isTransitioning = false;
+    }, 600);
+  }
+
+  function startAutoSlide() {
+    stopAutoSlide();
+    autoSlideInterval = setInterval(slide, 4000);
+  }
+
+  function stopAutoSlide() {
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+    }
+  }
+
+  const container = document.querySelector('.testimonials-slider-container');
+  if (container) {
+    container.addEventListener('mouseenter', stopAutoSlide);
+    container.addEventListener('mouseleave', startAutoSlide);
+  }
+
+  window.addEventListener('resize', setInitialPosition);
+
+  setInitialPosition();
+  updateClasses();
+  startAutoSlide();
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
   initScheduleFilter();
   initRegistrationModal();
+  initTestimonialSlider();
 });

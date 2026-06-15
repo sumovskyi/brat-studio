@@ -12,7 +12,16 @@
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
 </head>
 
-<body>
+<body class="theme-light">
+    <!-- SVG Torn Paper Filter -->
+    <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
+        <defs>
+            <filter id="torn-paper-filter">
+                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
     <!-- Header -->
     <header class="header">
         <div class="container header__inner">
@@ -24,24 +33,31 @@
                 <a href="index.html" class="nav__link">Home</a>
                 <a href="about.html" class="nav__link">About</a>
                 <a href="corporate.html" class="nav__link nav__link--active">Corporate</a>
-                <a href="masterclass.html" class="nav__link">Programs</a>
-                <a href="contact.html" class="btn btn--primary">Join the Studio</a>
+                <a href="programs.html" class="nav__link">Programs</a>
+                <a href="contact.html" class="btn btn--primary">Book Now</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero -->
-    <section class="hero hero--short">
+    <section class="hero hero--short hero--dark">
         <div class="hero__bg"></div>
         <div class="hero__overlay"></div>
         <div class="hero__content">
             <p class="hero__tagline">For Organizations</p>
-            <h1 class="hero__title">Transform Your Team's<br>Creative Potential</h1>
+            <h1 class="hero__title">Transform Your&nbsp;Team's<br>Creative Potential</h1>
             <p class="hero__subtitle">Custom workshops and training programs that bring theatrical techniques into your
                 workplace.</p>
             <div class="hero__cta mt-8">
                 <a href="#inquiry" class="btn btn--primary btn--large">Get a Custom Quote</a>
             </div>
+        </div>
+
+        <!-- Bottom Torn Paper Divider -->
+        <div class="divider-torn divider-torn--bottom">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z" />
+            </svg>
         </div>
     </section>
 
@@ -57,8 +73,7 @@
             </div>
 
             <div class="grid grid-2" style="gap: 2rem;">
-                <div class="service-card" data-animate style="text-align: left; padding: 2.5rem;">
-                    <div class="service-card__icon" style="text-align: left;">🎯</div>
+                <div class="service-card service-card--left" data-animate style="padding: 2.5rem;">
                     <h4 class="service-card__title">Custom Workshops</h4>
                     <p class="service-card__desc">
                         1-day to multi-week programs designed around your specific needs. From presentation skills to
@@ -72,8 +87,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card" data-animate style="text-align: left; padding: 2.5rem;">
-                    <div class="service-card__icon" style="text-align: left;">🤝</div>
+                <div class="service-card service-card--left" data-animate style="padding: 2.5rem;">
                     <h4 class="service-card__title">Team-Building</h4>
                     <p class="service-card__desc">
                         Creative collaboration experiences that build trust, break down barriers, and create lasting
@@ -87,8 +101,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card" data-animate style="text-align: left; padding: 2.5rem;">
-                    <div class="service-card__icon" style="text-align: left;">👔</div>
+                <div class="service-card service-card--left" data-animate style="padding: 2.5rem;">
                     <h4 class="service-card__title">Leadership Training</h4>
                     <p class="service-card__desc">
                         Help your leaders develop presence, authentic communication, and the ability to inspire through
@@ -102,8 +115,7 @@
                     </ul>
                 </div>
 
-                <div class="service-card" data-animate style="text-align: left; padding: 2.5rem;">
-                    <div class="service-card__icon" style="text-align: left;">💡</div>
+                <div class="service-card service-card--left" data-animate style="padding: 2.5rem;">
                     <h4 class="service-card__title">Creative Culture</h4>
                     <p class="service-card__desc">
                         Transform your workplace culture by integrating creativity and expression into daily workflows
@@ -122,6 +134,13 @@
 
     <!-- Benefits -->
     <section class="section section--dark">
+        <!-- Top Torn Paper Divider -->
+        <div class="divider-torn divider-torn--top">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z" />
+            </svg>
+        </div>
+
         <div class="container">
             <div class="section-header" data-animate>
                 <p class="section-header__label">Results</p>
@@ -130,37 +149,38 @@
 
             <div class="grid grid-3">
                 <div class="brat-card" data-animate>
-                    <div class="brat-card__letter" style="font-size: 3rem;">📈</div>
                     <h4 class="brat-card__word">Better Communication</h4>
                     <p class="brat-card__meaning">Teams that listen, express, and understand each other more effectively
                     </p>
                 </div>
                 <div class="brat-card" data-animate>
-                    <div class="brat-card__letter" style="font-size: 3rem;">🔥</div>
                     <h4 class="brat-card__word">Increased Confidence</h4>
                     <p class="brat-card__meaning">Employees who can present, pitch, and speak up with authority</p>
                 </div>
                 <div class="brat-card" data-animate>
-                    <div class="brat-card__letter" style="font-size: 3rem;">🤝</div>
                     <h4 class="brat-card__word">Stronger Teams</h4>
                     <p class="brat-card__meaning">Deeper trust and collaboration through shared creative experiences</p>
                 </div>
                 <div class="brat-card" data-animate>
-                    <div class="brat-card__letter" style="font-size: 3rem;">💡</div>
                     <h4 class="brat-card__word">Creative Innovation</h4>
                     <p class="brat-card__meaning">Unlock new ideas through theatrical thinking and improv techniques</p>
                 </div>
                 <div class="brat-card" data-animate>
-                    <div class="brat-card__letter" style="font-size: 3rem;">🧠</div>
                     <h4 class="brat-card__word">Emotional Intelligence</h4>
                     <p class="brat-card__meaning">Leaders and teams with deeper self-awareness and empathy</p>
                 </div>
                 <div class="brat-card" data-animate>
-                    <div class="brat-card__letter" style="font-size: 3rem;">✨</div>
                     <h4 class="brat-card__word">Engaged Culture</h4>
                     <p class="brat-card__meaning">A workplace where people feel safe to express and contribute</p>
                 </div>
             </div>
+        </div>
+
+        <!-- Bottom Torn Paper Divider -->
+        <div class="divider-torn divider-torn--bottom">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z" />
+            </svg>
         </div>
     </section>
 
@@ -175,7 +195,7 @@
             <div class="grid grid-4">
                 <div class="text-center" data-animate>
                     <div
-                        style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">
+                        style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold; color: #FFFFFF;">
                         1</div>
                     <h4 class="mb-4">Discovery Call</h4>
                     <p style="color: var(--color-gray-400);">We learn about your challenges, goals, and team dynamics
@@ -183,7 +203,7 @@
                 </div>
                 <div class="text-center" data-animate>
                     <div
-                        style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">
+                        style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold; color: #FFFFFF;">
                         2</div>
                     <h4 class="mb-4">Custom Design</h4>
                     <p style="color: var(--color-gray-400);">We create a tailored program specifically for your needs
@@ -191,14 +211,14 @@
                 </div>
                 <div class="text-center" data-animate>
                     <div
-                        style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">
+                        style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold; color: #FFFFFF;">
                         3</div>
                     <h4 class="mb-4">Delivery</h4>
                     <p style="color: var(--color-gray-400);">In-person or hybrid workshops at your location or ours</p>
                 </div>
                 <div class="text-center" data-animate>
                     <div
-                        style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">
+                        style="width: 60px; height: 60px; background: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold; color: #FFFFFF;">
                         4</div>
                     <h4 class="mb-4">Follow-Up</h4>
                     <p style="color: var(--color-gray-400);">Ongoing support and additional sessions as needed</p>
@@ -209,6 +229,13 @@
 
     <!-- Program Formats & Details -->
     <section class="section section--dark" id="formats">
+        <!-- Top Torn Paper Divider -->
+        <div class="divider-torn divider-torn--top">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z" />
+            </svg>
+        </div>
+
         <div class="container">
             <div class="section-header" data-animate>
                 <p class="section-header__label">Options</p>
@@ -222,7 +249,6 @@
             <div class="grid grid-3" data-animate>
                 <div class="format-card">
                     <div class="format-card__header">
-                        <span class="format-card__icon">⚡</span>
                         <h4>Quick Session</h4>
                     </div>
                     <div class="format-card__body">
@@ -243,10 +269,9 @@
                     </div>
                 </div>
 
-                <div class="format-card format-card--featured">
+                <div class="format-card">
                     <div class="format-card__badge">Most Popular</div>
                     <div class="format-card__header">
-                        <span class="format-card__icon">🎭</span>
                         <h4>Half-Day Workshop</h4>
                     </div>
                     <div class="format-card__body">
@@ -269,7 +294,6 @@
 
                 <div class="format-card">
                     <div class="format-card__header">
-                        <span class="format-card__icon">🔥</span>
                         <h4>Full-Day Intensive</h4>
                     </div>
                     <div class="format-card__body">
@@ -294,7 +318,7 @@
             <!-- Multi-week option -->
             <div class="format-extended" data-animate>
                 <div class="format-extended__content">
-                    <div class="format-extended__icon">📅</div>
+                    <div class="format-extended__icon"></div>
                     <div>
                         <h4>Multi-Week Program</h4>
                         <p>For organizations seeking lasting change. Weekly sessions over 4-8 weeks with ongoing
@@ -309,22 +333,26 @@
                 <h4 class="mb-8 text-center">Delivery Options</h4>
                 <div class="grid grid-3" style="gap: 1.5rem;">
                     <div class="delivery-card">
-                        <div class="delivery-card__icon">🏢</div>
                         <h5>At Your Office</h5>
                         <p>We come to your location (Toronto & GTA)</p>
                     </div>
                     <div class="delivery-card">
-                        <div class="delivery-card__icon">🎭</div>
                         <h5>At Our Studio</h5>
                         <p>Immersive theatrical space experience</p>
                     </div>
                     <div class="delivery-card">
-                        <div class="delivery-card__icon">🌐</div>
                         <h5>Virtual / Hybrid</h5>
                         <p>Interactive online workshops available</p>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Bottom Torn Paper Divider -->
+        <div class="divider-torn divider-torn--bottom">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z" />
+            </svg>
         </div>
     </section>
 
@@ -333,7 +361,6 @@
         <div class="container">
             <div class="grid grid-2" style="align-items: center; gap: 4rem;">
                 <div data-animate>
-                    <p class="section-header__label" style="text-align: left;">Learn More</p>
                     <h2 style="margin-bottom: 1.5rem;">Get the Full Picture</h2>
                     <p class="lead">Download our Corporate Programs presentation with detailed case studies, methodology
                         overview, and pricing guidelines.</p>
@@ -346,26 +373,15 @@
                     </ul>
 
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <!-- PDF Download button - replace href with actual PDF path -->
-                        <a href="#" class="btn btn--primary"
-                            onclick="alert('PDF will be available soon. Please contact us for presentation.'); return false;">
-                            📥 Download Presentation
-                        </a>
-                        <a href="#inquiry" class="btn btn--outline">Request Custom Deck</a>
+                        <a href="#inquiry" class="btn btn--primary">Request Custom Deck</a>
                     </div>
                 </div>
 
                 <div class="presentation-preview" data-animate>
-                    <div class="presentation-preview__mockup">
-                        <div class="presentation-preview__slide">
-                            <div class="presentation-preview__logo">BRAT<span>.</span>Studio</div>
-                            <p>Corporate Programs</p>
-                            <span>2026</span>
-                        </div>
-                        <div class="presentation-preview__pages">
-                            <span>12 slides</span>
-                        </div>
-                    </div>
+                    <video autoplay loop muted playsinline style="width: 100%; max-width: 420px; height: auto; border-radius: var(--radius-lg); display: block;">
+                        <source src="video/IMG_8411.mp4" type="video/mp4">
+                        <source src="video/IMG_8411.MOV" type="video/quicktime">
+                    </video>
                 </div>
             </div>
         </div>
@@ -373,6 +389,13 @@
 
     <!-- FAQ Section for Corporate -->
     <section class="section section--dark" id="faq">
+        <!-- Top Torn Paper Divider -->
+        <div class="divider-torn divider-torn--top">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z" />
+            </svg>
+        </div>
+
         <div class="container container--narrow">
             <div class="section-header" data-animate>
                 <p class="section-header__label">Questions</p>
@@ -482,6 +505,13 @@
                 <a href="#inquiry" class="btn btn--primary">Ask Us Directly</a>
             </div>
         </div>
+
+        <!-- Bottom Torn Paper Divider -->
+        <div class="divider-torn divider-torn--bottom">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z" />
+            </svg>
+        </div>
     </section>
 
     <!-- Inquiry Form -->
@@ -566,9 +596,8 @@
                 <div>
                     <h4 class="footer__title">Programs</h4>
                     <ul class="footer__links">
-                        <li><a href="masterclass.html">Masterclass</a></li>
+                        <li><a href="programs.html">Masterclass</a></li>
                         <li><a href="coaching.html">1:1 Coaching</a></li>
-                        <li><a href="studio.html">Studio Labs</a></li>
                         <li><a href="corporate.html">Corporate</a></li>
                     </ul>
                 </div>
@@ -580,21 +609,17 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="footer__title">Languages</h4>
-                    <ul class="footer__links">
-                        <li>🇬🇧 English</li>
-                        <li>🇺🇦 Українська</li>
-                        <li>🇷🇺 Русский</li>
-                    </ul>
-                </div>
+
             </div>
             <div class="footer__bottom">
                 <p class="footer__copyright">© 2026 BRAT Studio. Toronto, Canada.</p>
                 <div class="footer__social">
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="LinkedIn">💼</a>
-                    <a href="#" aria-label="Email">✉️</a>
+                    <a href="https://www.instagram.com/brat.community/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kateryna-bratchyna-172901272/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
                 </div>
             </div>
         </div>

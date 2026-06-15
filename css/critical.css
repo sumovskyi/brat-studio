@@ -131,6 +131,7 @@ body {
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 0.15em;
+    text-indent: 0.15em;
     margin-bottom: var(--space-4);
 }
 
