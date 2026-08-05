@@ -1,6 +1,6 @@
 // ================================================
 // BRAT Studio - Form Handler
-// Corporate inquiries via FormSubmit; booking/waitlist via Google Apps Script
+// Corporate inquiries via Google Forms -> Google Sheets; booking/waitlist via Google Apps Script
 // ================================================
 
 /**
@@ -65,8 +65,8 @@ const CONFIG = {
     // Replace this with your Google Apps Script Web App URL after deployment
     GOOGLE_SCRIPT_URL: 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL',
 
-    // Static-site endpoint used by the corporate inquiry form.
-    CORPORATE_FORM_ENDPOINT: 'https://formsubmit.co/ajax/hello@bratcommunity.com',
+    // Published Google Form endpoint that writes website inquiries to the BRAT CRM sheet.
+    CORPORATE_FORM_ENDPOINT: 'https://docs.google.com/forms/d/e/1FAIpQLSeF-2c7GomPWT1I8b411MqqwQ42vLu7kMFBh9ZTi4u-ONMu2g/formResponse',
 
     // Only registration/booking forms should continue to payment
     SUCCESS_REDIRECTS: {
@@ -113,23 +113,43 @@ function initFormHandler(form) {
             data.submitted_at = new Date().toISOString();
 
             if (form.id === 'corporate-form') {
-                const corporatePayload = new FormData(form);
-                corporatePayload.set('form_source', data.form_source);
-                corporatePayload.set('page_url', data.page_url);
-                corporatePayload.set('submitted_at', data.submitted_at);
+                // Silently discard likely bot submissions caught by the hidden honeypot.
+                if (data._honey) {
+                    showSuccess(form, 'Thank you—your inquiry was sent.');
+                    form.reset();
+                    resetCorporateProgramSelection();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    return;
+                }
 
-                const response = await fetch(CONFIG.CORPORATE_FORM_ENDPOINT, {
+                const programNames = {
+                    recommend: 'Request recommendation',
+                    'reset-connect': 'RESET & CONNECT',
+                    'ready-real-time': 'READY IN REAL TIME',
+                    'lead-presence': 'LEAD WITH PRESENCE',
+                    'real-moment': 'REAL MOMENT LAB'
+                };
+                const corporatePayload = new URLSearchParams({
+                    'entry.387981321': data.company || '',
+                    'entry.592734545': data.name || '',
+                    'entry.610900539': data.email || '',
+                    'entry.1001196294': programNames[data.program] || data.program || 'Request recommendation',
+                    'entry.169625623': data.workplace_situation || '',
+                    'entry.1182273870': data.page_url,
+                    'entry.1656936871': 'To review',
+                    'entry.2134172810': 'New',
+                    'entry.189387613': 'Review and contact',
+                    'entry.394698953': 'Unassigned',
+                    'entry.2100311547': 'Website'
+                });
+
+                await fetch(CONFIG.CORPORATE_FORM_ENDPOINT, {
                     method: 'POST',
-                    headers: {
-                        Accept: 'application/json'
-                    },
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
                     body: corporatePayload
                 });
-                const result = await response.json().catch(() => ({}));
-
-                if (!response.ok || (result.success !== true && result.success !== 'true')) {
-                    throw new Error(result.message || 'Corporate inquiry was not accepted.');
-                }
 
                 showSuccess(
                     form,
