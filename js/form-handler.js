@@ -1,6 +1,6 @@
 // ================================================
 // BRAT Studio - Form Handler
-// Google Sheets integration via Google Apps Script
+// Corporate inquiries via FormSubmit; booking/waitlist via Google Apps Script
 // ================================================
 
 /**
@@ -65,8 +65,13 @@ const CONFIG = {
     // Replace this with your Google Apps Script Web App URL after deployment
     GOOGLE_SCRIPT_URL: 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL',
 
-    // Redirect URL after successful submission
-    SUCCESS_REDIRECT: 'payment.html',
+    // Static-site endpoint used by the corporate inquiry form.
+    CORPORATE_FORM_ENDPOINT: 'https://formsubmit.co/ajax/hello@bratcommunity.com',
+
+    // Only registration/booking forms should continue to payment
+    SUCCESS_REDIRECTS: {
+        'booking-form': 'payment.html'
+    },
 
     // Form IDs to handle
     FORMS: ['booking-form', 'corporate-form', 'courses-waitlist']
@@ -80,6 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
             initFormHandler(form);
         }
     });
+
+    initCorporateProgramLinks();
 });
 
 /**
@@ -92,7 +99,6 @@ function initFormHandler(form) {
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
 
-        // Show loading state
         submitBtn.disabled = true;
         submitBtn.textContent = 'Sending...';
 
@@ -106,18 +112,51 @@ function initFormHandler(form) {
             data.page_url = window.location.href;
             data.submitted_at = new Date().toISOString();
 
+            if (form.id === 'corporate-form') {
+                const corporatePayload = new FormData(form);
+                corporatePayload.set('form_source', data.form_source);
+                corporatePayload.set('page_url', data.page_url);
+                corporatePayload.set('submitted_at', data.submitted_at);
+
+                const response = await fetch(CONFIG.CORPORATE_FORM_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        Accept: 'application/json'
+                    },
+                    body: corporatePayload
+                });
+                const result = await response.json().catch(() => ({}));
+
+                if (!response.ok || (result.success !== true && result.success !== 'true')) {
+                    throw new Error(result.message || 'Corporate inquiry was not accepted.');
+                }
+
+                showSuccess(
+                    form,
+                    'Thank you—your inquiry was sent. BRAT will review the team challenge and recommend one starting point.'
+                );
+                form.reset();
+                resetCorporateProgramSelection();
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                return;
+            }
+
             // Check if Google Script URL is configured
             if (CONFIG.GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
-                // Demo mode - just log and redirect
                 console.log('Form data (demo mode):', data);
+
                 showSuccess(form, 'Demo mode: Form submitted!');
 
-                // Redirect after short delay
-                setTimeout(() => {
-                    if (form.id !== 'courses-waitlist') {
-                        window.location.href = CONFIG.SUCCESS_REDIRECT;
-                    }
-                }, 1500);
+                const demoRedirect = CONFIG.SUCCESS_REDIRECTS[form.id];
+                if (demoRedirect) {
+                    setTimeout(() => {
+                        window.location.href = demoRedirect;
+                    }, 1500);
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
                 return;
             }
 
@@ -134,11 +173,16 @@ function initFormHandler(form) {
             // Success
             showSuccess(form, 'Thank you! We\'ll be in touch soon.');
 
-            // Redirect for booking forms
-            if (form.id !== 'courses-waitlist') {
+            // Redirect only the forms that explicitly require a payment step.
+            const successRedirect = CONFIG.SUCCESS_REDIRECTS[form.id];
+            if (successRedirect) {
                 setTimeout(() => {
-                    window.location.href = CONFIG.SUCCESS_REDIRECT;
+                    window.location.href = successRedirect;
                 }, 1500);
+            } else {
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
             }
 
         } catch (error) {
@@ -151,6 +195,44 @@ function initFormHandler(form) {
 }
 
 /**
+ * Preselect the matching corporate product when a card CTA is clicked.
+ */
+function initCorporateProgramLinks() {
+    const programInput = document.getElementById('interest');
+    const selectionNote = document.getElementById('corporate-program-selection');
+    const programLinks = document.querySelectorAll('[data-corporate-program]');
+    const programNames = {
+        'reset-connect': 'RESET & CONNECT',
+        'ready-real-time': 'READY IN REAL TIME',
+        'lead-presence': 'LEAD WITH PRESENCE',
+        'real-moment': 'REAL MOMENT LAB'
+    };
+
+    if (!programInput || !programLinks.length) return;
+
+    programLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            programInput.value = link.dataset.corporateProgram || 'recommend';
+
+            if (selectionNote && programNames[programInput.value]) {
+                selectionNote.textContent = `Selected program: ${programNames[programInput.value]}`;
+                selectionNote.hidden = false;
+            }
+        });
+    });
+}
+
+/**
+ * Reset the program confirmation after a successful inquiry.
+ */
+function resetCorporateProgramSelection() {
+    const selectionNote = document.getElementById('corporate-program-selection');
+    if (!selectionNote) return;
+    selectionNote.textContent = '';
+    selectionNote.hidden = true;
+}
+
+/**
  * Show success message
  */
 function showSuccess(form, message) {
@@ -159,6 +241,8 @@ function showSuccess(form, message) {
 
     const msg = document.createElement('div');
     msg.className = 'form-message form-message--success';
+    msg.setAttribute('role', 'status');
+    msg.setAttribute('aria-live', 'polite');
     msg.style.cssText = `
     padding: 1rem;
     margin-top: 1rem;
@@ -181,13 +265,14 @@ function showError(form, message) {
 
     const msg = document.createElement('div');
     msg.className = 'form-message form-message--error';
+    msg.setAttribute('role', 'alert');
     msg.style.cssText = `
     padding: 1rem;
     margin-top: 1rem;
-    background: rgba(220, 38, 38, 0.2);
+    background: rgba(220, 38, 38, 0.08);
     border: 1px solid #dc2626;
     border-radius: 8px;
-    color: #fca5a5;
+    color: #991b1b;
     text-align: center;
   `;
     msg.textContent = message;
