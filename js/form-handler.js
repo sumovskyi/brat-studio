@@ -115,7 +115,7 @@ function initFormHandler(form) {
             if (form.id === 'corporate-form') {
                 // Silently discard likely bot submissions caught by the hidden honeypot.
                 if (data._honey) {
-                    showSuccess(form, 'Thank you—your inquiry was sent.');
+                    showSuccess(form, 'Thank you—BRAT will review your request and reply with the recommended format, scope and next step.');
                     form.reset();
                     resetCorporateProgramSelection();
                     submitBtn.disabled = false;
@@ -124,7 +124,7 @@ function initFormHandler(form) {
                 }
 
                 const programNames = {
-                    recommend: 'Request recommendation',
+                    recommend: 'Plan a team workshop',
                     'reset-connect': 'RESET & CONNECT',
                     'ready-real-time': 'READY IN REAL TIME',
                     'lead-presence': 'LEAD WITH PRESENCE',
@@ -153,7 +153,7 @@ function initFormHandler(form) {
 
                 showSuccess(
                     form,
-                    'Thank you—your inquiry was sent. BRAT will review the team challenge and recommend one starting point.'
+                    'Thank you—BRAT will review your request and reply with the recommended format, scope and next step.'
                 );
                 form.reset();
                 resetCorporateProgramSelection();
@@ -270,7 +270,7 @@ function resetCorporateProgramSelection() {
         selectionNote.hidden = true;
     }
     if (inquiryTitle) {
-        inquiryTitle.textContent = 'Tell us the team challenge. BRAT will recommend the right format.';
+        inquiryTitle.textContent = 'Tell us what your team needs.';
     }
 }
 
