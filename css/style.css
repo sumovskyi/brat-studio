@@ -3371,7 +3371,7 @@ a:hover {
 
 .corporate-methodology__bridge {
     max-width: 720px;
-    margin: 1.5rem auto 0;
+    margin: 1.25rem auto 0;
     padding: 1rem 1.25rem;
     border-left: 3px solid var(--color-accent);
     background: rgba(139, 168, 194, 0.1);
@@ -3380,6 +3380,15 @@ a:hover {
     font-weight: 700;
     line-height: 1.5;
     text-align: left;
+}
+
+.corporate-methodology__source-note {
+    max-width: 720px;
+    margin: 0.85rem auto 0;
+    color: #666666 !important;
+    font-size: 0.78rem;
+    font-style: italic;
+    line-height: 1.45;
 }
 
 .corporate-methodology-grid {
@@ -3419,14 +3428,6 @@ a:hover {
     font-size: clamp(1.25rem, 1.1rem + 0.4vw, 1.55rem);
     font-weight: 650;
     line-height: 1.25;
-}
-
-.corporate-methodology-card__source {
-    margin: 0 0 1.25rem 2.5rem;
-    color: #666666 !important;
-    font-size: 0.78rem;
-    font-style: italic;
-    line-height: 1.45;
 }
 
 .corporate-methodology-card__copy {
@@ -4247,10 +4248,6 @@ a:hover {
 
     .corporate-methodology-card {
         padding: 1.5rem;
-    }
-
-    .corporate-methodology-card__source {
-        margin-left: 0;
     }
 
     .corporate-methodology-card__steps div {
