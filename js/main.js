@@ -36,18 +36,49 @@ function initMobileNav() {
 
   if (!toggle || !nav) return;
 
+  const closeMenu = ({ returnFocus = false } = {}) => {
+    nav.classList.remove('nav--open');
+    document.body.classList.remove('nav-menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation');
+
+    if (returnFocus) toggle.focus();
+  };
+
+  const openMenu = () => {
+    nav.classList.add('nav--open');
+    document.body.classList.add('nav-menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close navigation');
+  };
+
+  closeMenu();
+
   toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('nav--open');
-    toggle.setAttribute('aria-expanded', isOpen);
+    if (nav.classList.contains('nav--open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
-  // Close menu when clicking a link
-  nav.querySelectorAll('.nav__link').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('nav--open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+  // Close the menu for every destination, including the primary CTA.
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => closeMenu());
   });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav.classList.contains('nav--open')) {
+      closeMenu({ returnFocus: true });
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeMenu();
+  });
+
+  // Safari can restore an open menu from the back-forward cache.
+  window.addEventListener('pageshow', () => closeMenu());
 }
 
 // -------------------- Scroll Animations --------------------
