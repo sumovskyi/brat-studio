@@ -248,7 +248,7 @@ function initCorporateProgramLinks() {
 
             const scrollTarget = selectionNote || inquirySection;
             if (scrollTarget) {
-                const headerOffset = 100;
+                const headerOffset = 124;
                 const destination = scrollTarget.getBoundingClientRect().top + window.scrollY - headerOffset;
                 window.scrollTo({ top: destination, behavior: 'smooth' });
             }
