@@ -3828,38 +3828,45 @@ a:hover {
 }
 
 .corporate-impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
-    max-width: 1180px;
+    max-width: 1040px;
     margin: 0 auto;
 }
 
 .corporate-impact-card {
     display: flex;
     flex-direction: column;
-    padding: 1.55rem;
+    padding: 1.75rem;
 }
 
 .corporate-impact-card .corporate-value-card__label {
-    min-height: 2.9em;
+    min-height: 0;
     margin-bottom: 0.8rem;
     font-size: 0.72rem;
     line-height: 1.45;
 }
 
-.corporate-impact-card h3 {
+.corporate-impact-card__title {
     margin-bottom: 0.75rem;
-    color: #1A1A1A;
+    color: #1A1A1A !important;
     font-size: clamp(1.2rem, 1.05rem + 0.4vw, 1.5rem);
 }
 
-.corporate-impact-card > p:not(.corporate-value-card__label) {
+.corporate-impact-card__practice,
+.corporate-impact-card__value {
     color: #4A4A4A !important;
     font-size: var(--text-sm);
     line-height: 1.6;
 }
 
-.corporate-impact-card > p strong {
+.corporate-impact-card__practice strong,
+.corporate-impact-card__value strong {
     color: #1A1A1A;
+}
+
+.corporate-impact-card__practice {
+    margin: 0 0 1.25rem;
 }
 
 .corporate-impact-card__value {
