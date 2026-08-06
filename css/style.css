@@ -3416,6 +3416,28 @@ a:hover {
     line-height: 1.45;
 }
 
+.corporate-methodology-card__copy {
+    margin: 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    color: #4A4A4A !important;
+    line-height: 1.6;
+}
+
+.corporate-methodology-card__result {
+    margin: 1rem 0 0;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    background: #F5F3ED;
+    color: #333333 !important;
+    font-size: var(--text-sm);
+    line-height: 1.55;
+}
+
+.corporate-methodology-card__result strong {
+    color: #1A1A1A;
+}
+
 .corporate-methodology-card__steps {
     display: grid;
     gap: 0;
@@ -3795,6 +3817,47 @@ a:hover {
     margin: 0 auto;
 }
 
+.corporate-impact-grid {
+    align-items: stretch;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.corporate-impact-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.55rem;
+}
+
+.corporate-impact-card .corporate-value-card__label {
+    min-height: 2.9em;
+    margin-bottom: 0.8rem;
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.corporate-impact-card h3 {
+    margin-bottom: 0.75rem;
+    color: #1A1A1A;
+    font-size: clamp(1.2rem, 1.05rem + 0.4vw, 1.5rem);
+}
+
+.corporate-impact-card > p:not(.corporate-value-card__label) {
+    color: #4A4A4A !important;
+    font-size: var(--text-sm);
+    line-height: 1.6;
+}
+
+.corporate-impact-card > p strong {
+    color: #1A1A1A;
+}
+
+.corporate-impact-card__value {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
 .corporate-practice-card {
     padding: 1.55rem;
 }
@@ -3898,6 +3961,58 @@ a:hover {
     color: rgba(255, 255, 255, 0.86) !important;
 }
 
+.corporate-boundary-note--light {
+    border-color: rgba(0, 0, 0, 0.09);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.corporate-boundary-note--light strong {
+    color: #1A1A1A;
+}
+
+.corporate-boundary-note--light p {
+    color: #4A4A4A !important;
+}
+
+.corporate-process-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.corporate-process-step {
+    min-width: 0;
+    text-align: center;
+}
+
+.corporate-process-step__number {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #FFFFFF;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.corporate-process-step h4 {
+    color: #1A1A1A;
+}
+
+.corporate-process-step p {
+    margin: 0;
+    color: #5A5A5A !important;
+    font-size: var(--text-sm);
+    line-height: 1.55;
+}
+
+.corporate-section-subheader {
+    margin-top: 4.5rem;
+}
+
 .corporate-method-cycle {
     margin: 1.75rem 0 2rem;
     padding: 1.25rem 1.4rem;
@@ -3931,6 +4046,30 @@ a:hover {
 #session-method .session-preview video {
     width: 100% !important;
     max-width: 420px !important;
+}
+
+.corporate-founder-grid {
+    align-items: center;
+    gap: 4rem;
+}
+
+.corporate-founder-copy h2 {
+    margin-bottom: 1.25rem;
+}
+
+.corporate-founder-copy > p:not(.section-header__label):not(.corporate-method-cycle) {
+    color: #4A4A4A !important;
+}
+
+.corporate-founder-copy__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.corporate-founder-copy__actions .corporate-facilitator-note__link {
+    margin-top: 0;
 }
 
 .corporate-facilitator-note .corporate-value-card__label {
@@ -4022,6 +4161,11 @@ a:hover {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .corporate-impact-grid,
+    .corporate-process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .corporate-methodology-grid {
         grid-template-columns: 1fr;
         max-width: 720px;
@@ -4079,7 +4223,9 @@ a:hover {
     }
 
     .corporate-practice-grid,
-    .corporate-deliverables-grid {
+    .corporate-deliverables-grid,
+    .corporate-impact-grid,
+    .corporate-process-grid {
         grid-template-columns: 1fr;
     }
 
@@ -4144,6 +4290,10 @@ a:hover {
         min-height: 0;
     }
 
+    .corporate-impact-card .corporate-value-card__label {
+        min-height: 0;
+    }
+
     #session-method .grid > * {
         min-width: 0;
     }
@@ -4157,5 +4307,14 @@ a:hover {
     #session-method .session-preview video,
     #session-method .corporate-facilitator-note {
         max-width: 100% !important;
+    }
+
+    .corporate-founder-grid {
+        gap: 2rem;
+    }
+
+    .corporate-founder-copy__actions,
+    .corporate-founder-copy__actions .btn {
+        width: 100%;
     }
 }
