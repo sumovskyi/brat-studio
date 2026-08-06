@@ -77,6 +77,7 @@ function initSmoothScroll() {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href === '#') return;
+      if (this.hasAttribute('data-corporate-program')) return;
 
       const target = document.querySelector(href);
       if (target) {

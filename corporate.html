@@ -161,8 +161,8 @@
                     <div class="corporate-program-card__commercial">
                         <p class="corporate-program-card__price">Starting at CAD 1,500 <small>+ applicable tax</small></p>
                         <p class="corporate-program-card__note">Fixed scope. No forced solo performance.</p>
-                        <a href="#inquiry" class="btn btn--outline" data-corporate-program="reset-connect">Ask About This
-                            Program</a>
+                        <a href="#inquiry" class="btn btn--outline" data-corporate-program="reset-connect">Plan Reset
+                            &amp; Connect</a>
                     </div>
                 </article>
 
@@ -181,8 +181,8 @@
                     <div class="corporate-program-card__commercial">
                         <p class="corporate-program-card__price">Starting at CAD 3,500 <small>+ applicable tax</small></p>
                         <p class="corporate-program-card__note">Includes sponsor briefing and a 14-day application check.</p>
-                        <a href="#inquiry" class="btn btn--primary" data-corporate-program="ready-real-time">Ask About This
-                            Program</a>
+                        <a href="#inquiry" class="btn btn--primary" data-corporate-program="ready-real-time">Start the
+                            Paid Pilot</a>
                     </div>
                 </article>
 
@@ -202,8 +202,8 @@
                         <p class="corporate-program-card__price">Starting at CAD 7,500 <small>+ applicable tax</small></p>
                         <p class="corporate-program-card__note">Includes sponsor briefing, tools and a reinforcement
                             option. Starting price covers four leaders; five or six are confirmed in the quote.</p>
-                        <a href="#inquiry" class="btn btn--outline" data-corporate-program="lead-presence">Ask About This
-                            Program</a>
+                        <a href="#inquiry" class="btn btn--outline" data-corporate-program="lead-presence">Plan a
+                            Leadership Series</a>
                     </div>
                 </article>
             </div>
@@ -221,7 +221,7 @@
                         <div><dt>Format</dt><dd>Full day or two half-days · 6–10 participants</dd></div>
                         <div><dt>Investment</dt><dd>From CAD 5,500 + applicable tax</dd></div>
                     </dl>
-                    <a href="#inquiry" class="btn btn--outline" data-corporate-program="real-moment">Ask About This Program</a>
+                    <a href="#inquiry" class="btn btn--outline" data-corporate-program="real-moment">Scope a Custom Lab</a>
                 </div>
             </div>
         </div>
@@ -570,14 +570,16 @@
     </section>
 
     <!-- Inquiry Form -->
-    <section class="section" id="inquiry">
+    <section class="section" id="inquiry" aria-labelledby="corporate-inquiry-title">
         <div class="container container--narrow">
             <div class="section-header" data-animate>
                 <p class="section-header__label">Get Started</p>
-                <h2 class="section-header__title">Tell us the team challenge. BRAT will recommend the right format.</h2>
-                <p class="section-header__text">Share four details. BRAT will recommend one starting point and confirm
-                    the initial scope and starting price.</p>
-                <p class="corporate-form__selection" id="corporate-program-selection" hidden></p>
+                <h2 class="section-header__title" id="corporate-inquiry-title">Tell us the team challenge. BRAT will
+                    recommend the right format.</h2>
+                <p class="section-header__text">Share four details. BRAT will confirm the right starting point, initial
+                    scope and starting price.</p>
+                <p class="corporate-form__selection" id="corporate-program-selection" role="status" aria-live="polite"
+                    hidden></p>
             </div>
 
             <form id="corporate-form" class="mt-12" data-animate method="POST"
@@ -610,7 +612,7 @@
                 </div>
 
                 <button type="submit" class="btn btn--primary btn--large" style="width: 100%;">
-                    Send Inquiry
+                    Send Program Request
                 </button>
                 <p class="corporate-form__microcopy">No obligation. BRAT will review the team challenge and recommend one
                     starting point. Prefer to write directly? <a href="mailto:hello@bratcommunity.com">hello@bratcommunity.com</a></p>
@@ -659,8 +661,8 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/form-handler.js?v=20260805-crm1"></script>
+    <script src="js/main.js?v=20260805-cta2"></script>
+    <script src="js/form-handler.js?v=20260805-cta2"></script>
 </body>
 
 </html>

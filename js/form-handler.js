@@ -220,6 +220,8 @@ function initFormHandler(form) {
 function initCorporateProgramLinks() {
     const programInput = document.getElementById('interest');
     const selectionNote = document.getElementById('corporate-program-selection');
+    const inquirySection = document.getElementById('inquiry');
+    const inquiryTitle = document.getElementById('corporate-inquiry-title');
     const programLinks = document.querySelectorAll('[data-corporate-program]');
     const programNames = {
         'reset-connect': 'RESET & CONNECT',
@@ -231,12 +233,24 @@ function initCorporateProgramLinks() {
     if (!programInput || !programLinks.length) return;
 
     programLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
             programInput.value = link.dataset.corporateProgram || 'recommend';
 
             if (selectionNote && programNames[programInput.value]) {
-                selectionNote.textContent = `Selected program: ${programNames[programInput.value]}`;
+                selectionNote.textContent = `Selected starting point: ${programNames[programInput.value]}`;
                 selectionNote.hidden = false;
+            }
+
+            if (inquiryTitle && programNames[programInput.value]) {
+                inquiryTitle.textContent = `Let's scope ${programNames[programInput.value]} for your team.`;
+            }
+
+            const scrollTarget = selectionNote || inquirySection;
+            if (scrollTarget) {
+                const headerOffset = 100;
+                const destination = scrollTarget.getBoundingClientRect().top + window.scrollY - headerOffset;
+                window.scrollTo({ top: destination, behavior: 'smooth' });
             }
         });
     });
@@ -246,10 +260,18 @@ function initCorporateProgramLinks() {
  * Reset the program confirmation after a successful inquiry.
  */
 function resetCorporateProgramSelection() {
+    const programInput = document.getElementById('interest');
     const selectionNote = document.getElementById('corporate-program-selection');
-    if (!selectionNote) return;
-    selectionNote.textContent = '';
-    selectionNote.hidden = true;
+    const inquiryTitle = document.getElementById('corporate-inquiry-title');
+
+    if (programInput) programInput.value = 'recommend';
+    if (selectionNote) {
+        selectionNote.textContent = '';
+        selectionNote.hidden = true;
+    }
+    if (inquiryTitle) {
+        inquiryTitle.textContent = 'Tell us the team challenge. BRAT will recommend the right format.';
+    }
 }
 
 /**
