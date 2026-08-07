@@ -125,6 +125,7 @@ function initFormHandler(form) {
 
                 const programNames = {
                     recommend: 'Plan a team workshop',
+                    'presence-essentials': 'PRESENCE ESSENTIALS',
                     'reset-connect': 'RESET & CONNECT',
                     'ready-real-time': 'READY IN REAL TIME',
                     'lead-presence': 'LEAD WITH PRESENCE',
@@ -224,6 +225,7 @@ function initCorporateProgramLinks() {
     const inquiryTitle = document.getElementById('corporate-inquiry-title');
     const programLinks = document.querySelectorAll('[data-corporate-program]');
     const programNames = {
+        'presence-essentials': 'PRESENCE ESSENTIALS',
         'reset-connect': 'RESET & CONNECT',
         'ready-real-time': 'READY IN REAL TIME',
         'lead-presence': 'LEAD WITH PRESENCE',
