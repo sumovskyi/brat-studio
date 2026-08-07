@@ -3679,6 +3679,22 @@ a:hover {
     box-sizing: border-box;
 }
 
+.corporate-page .hero--short {
+    min-height: 70vh;
+    padding: 7rem 0 5rem;
+}
+
+.corporate-page .hero--short .hero__tagline {
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.2em;
+    text-indent: 0.2em;
+}
+
+.corporate-page .hero--short .hero__title {
+    max-width: 1100px;
+    font-size: clamp(2.5rem, 1.8rem + 3.1vw, 3.9rem);
+}
+
 .hero--short .hero__title {
     max-width: 900px;
     margin-right: auto;
@@ -4336,8 +4352,17 @@ a:hover {
 }
 
 #session-method .session-preview video {
+    display: block;
     width: 100% !important;
     max-width: 420px !important;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    object-position: center 32%;
+}
+
+.corporate-page section[id] {
+    scroll-margin-top: 96px;
 }
 
 .corporate-founder-grid {
@@ -4471,9 +4496,13 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .hero--short {
+    .corporate-page .section {
+        padding: 3.5rem 0;
+    }
+
+    .corporate-page .hero--short {
         min-height: auto;
-        padding: 6rem 0 4.5rem;
+        padding: 4rem 0 3rem;
     }
 
     .corporate-benefits {
@@ -4524,7 +4553,7 @@ a:hover {
     }
 
     .corporate-story-problem {
-        margin-bottom: 3.5rem;
+        margin-bottom: 2.5rem;
     }
 
     .corporate-story-problem ul {
@@ -4542,8 +4571,15 @@ a:hover {
         grid-template-columns: 1fr;
     }
 
+    .corporate-outcomes-grid,
+    .corporate-company-results,
+    .corporate-programs-grid,
+    .corporate-customization-grid {
+        gap: 1rem;
+    }
+
     .corporate-program-group-header--secondary {
-        margin-top: 3rem;
+        margin-top: 2.5rem;
     }
 
     .corporate-methodology-card__steps div {
@@ -4557,16 +4593,27 @@ a:hover {
         padding-left: 1rem;
     }
 
-    .hero--short .hero__title {
-        font-size: clamp(2rem, 9.5vw, 2.85rem);
-    }
-
-    .hero--short .hero__subtitle {
-        font-size: 1rem;
+    .corporate-page .hero--short .hero__tagline {
+        margin-bottom: 1rem;
+        font-size: 0.76rem;
+        letter-spacing: 0.16em;
         line-height: 1.55;
     }
 
-    .corporate-hero__meta {
+    .corporate-page .hero--short .hero__title {
+        margin-bottom: 1.25rem;
+        font-size: clamp(2rem, 8.25vw, 2.55rem);
+        line-height: 1.04;
+    }
+
+    .corporate-page .hero--short .hero__subtitle {
+        font-size: 0.98rem;
+        line-height: 1.5;
+    }
+
+    .corporate-page .corporate-hero__meta {
+        margin-top: 0.75rem;
+        font-size: 0.82rem;
         line-height: 1.6;
     }
 
@@ -4598,7 +4645,36 @@ a:hover {
 
     .corporate-program-card,
     .corporate-value-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
+    }
+
+    .corporate-program-card__company-value li {
+        font-size: 0.875rem;
+    }
+
+    .corporate-program-card__stream {
+        margin-bottom: 0.65rem;
+    }
+
+    .corporate-program-card__title,
+    .corporate-program-card__hook,
+    .corporate-program-card__fit,
+    .corporate-program-card__outcomes,
+    .corporate-program-card__company-value {
+        margin-bottom: 0.75rem;
+    }
+
+    .corporate-program-card__hook {
+        font-size: 1rem;
+    }
+
+    .corporate-program-card__format {
+        margin-bottom: 0.9rem;
+        padding-top: 0.75rem;
+    }
+
+    .corporate-program-card__note {
+        margin-bottom: 0.9rem;
     }
 
     .corporate-practice-card .corporate-value-card__label {
