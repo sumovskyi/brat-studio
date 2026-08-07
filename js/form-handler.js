@@ -115,7 +115,7 @@ function initFormHandler(form) {
             if (form.id === 'corporate-form') {
                 // Silently discard likely bot submissions caught by the hidden honeypot.
                 if (data._honey) {
-                    showSuccess(form, 'Thank you—BRAT will review your request and reply with the recommended format, scope and next step.');
+                    showSuccess(form, 'Thank you—BRAT will review your request and reply with scope, starting price, available dates and the next step.');
                     form.reset();
                     resetCorporateProgramSelection();
                     submitBtn.disabled = false;
@@ -125,7 +125,7 @@ function initFormHandler(form) {
 
                 const programNames = {
                     recommend: 'Plan a team workshop',
-                    'presence-essentials': 'PRESENCE ESSENTIALS',
+                    'show-up-ready': 'SHOW UP READY',
                     'reset-connect': 'RESET & CONNECT',
                     'ready-real-time': 'READY IN REAL TIME',
                     'lead-presence': 'LEAD WITH PRESENCE',
@@ -135,7 +135,7 @@ function initFormHandler(form) {
                     'entry.387981321': data.company || '',
                     'entry.592734545': data.name || '',
                     'entry.610900539': data.email || '',
-                    'entry.1001196294': programNames[data.program] || data.program || 'Request recommendation',
+                    'entry.1001196294': programNames[data.program] || data.program || 'Plan a team workshop',
                     'entry.169625623': data.workplace_situation || '',
                     'entry.1182273870': data.page_url,
                     'entry.1656936871': 'To review',
@@ -154,7 +154,7 @@ function initFormHandler(form) {
 
                 showSuccess(
                     form,
-                    'Thank you—BRAT will review your request and reply with the recommended format, scope and next step.'
+                    'Thank you—BRAT will review your request and reply with scope, starting price, available dates and the next step.'
                 );
                 form.reset();
                 resetCorporateProgramSelection();
@@ -225,7 +225,7 @@ function initCorporateProgramLinks() {
     const inquiryTitle = document.getElementById('corporate-inquiry-title');
     const programLinks = document.querySelectorAll('[data-corporate-program]');
     const programNames = {
-        'presence-essentials': 'PRESENCE ESSENTIALS',
+        'show-up-ready': 'SHOW UP READY',
         'reset-connect': 'RESET & CONNECT',
         'ready-real-time': 'READY IN REAL TIME',
         'lead-presence': 'LEAD WITH PRESENCE',
