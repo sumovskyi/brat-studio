@@ -3664,43 +3664,6 @@ a:hover {
     margin: 0 auto;
 }
 
-.corporate-program-guide {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 0.75rem;
-    margin: 0 auto 2rem;
-}
-
-.corporate-program-guide a {
-    display: flex;
-    min-width: 0;
-    padding: 0.9rem 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.09);
-    border-radius: var(--radius-md);
-    background: rgba(255, 255, 255, 0.62);
-    flex-direction: column;
-    gap: 0.25rem;
-    color: #4A4A4A;
-    text-decoration: none;
-    transition: border-color var(--transition-fast), background var(--transition-fast);
-}
-
-.corporate-program-guide a:hover {
-    border-color: var(--color-accent);
-    background: #FFFFFF;
-}
-
-.corporate-program-guide span {
-    font-size: 0.76rem;
-    line-height: 1.35;
-}
-
-.corporate-program-guide strong {
-    color: #1A1A1A;
-    font-size: 0.78rem;
-    line-height: 1.35;
-}
-
 .corporate-program-card {
     position: relative;
     display: flex;
@@ -4340,11 +4303,6 @@ a:hover {
         margin: 0 auto;
     }
 
-    .corporate-program-guide {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        max-width: 720px;
-    }
-
     .corporate-practice-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -4384,22 +4342,6 @@ a:hover {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         scrollbar-width: none;
-    }
-
-    .corporate-program-guide {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-    }
-
-    .corporate-program-guide a {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-
-    .corporate-program-guide strong {
-        text-align: right;
     }
 
     .corporate-benefits-grid::-webkit-scrollbar {
