@@ -1,665 +1,1143 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Practical workplace training in Toronto that helps employees settle before meetings, speak clearly, listen, adapt and recover in real time.">
-    <title>Practical Communication &amp; Presence Training | BRAT Studio Toronto</title>
-    <link rel="stylesheet" href="css/style.css?v=20260807-offer2">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+    <title>Corporate Communication &amp; Presence Training in Toronto | BRAT Studio</title>
+    <meta name="description" content="Team workshops in Toronto, the GTA or live virtual that help employees stay steady, speak clearly and recover in real time. Built from actor preparation. From CAD 1,500.">
+    <link rel="canonical" href="https://bratcommunity.com/corporate.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="BRAT Studio">
+    <meta property="og:title" content="Don't teach your team what to say. Train them for what happens next.">
+    <meta property="og:description" content="Practical communication and presence training for teams in Toronto, the GTA or live virtual. No acting experience required.">
+    <meta property="og:url" content="https://bratcommunity.com/corporate.html">
+    <meta property="og:image" content="https://bratcommunity.com/images/corporate/og-corporate.jpg">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎭</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Inter:wght@400;500;600;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Corporate communication and presence training",
+      "serviceType": "Workplace communication training",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "BRAT Studio",
+        "url": "https://bratcommunity.com/",
+        "email": "hello@bratcommunity.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Toronto", "addressRegion": "ON", "addressCountry": "CA" },
+        "founder": { "@type": "Person", "name": "Kateryna Bratchyna" }
+      },
+      "areaServed": ["Toronto", "Greater Toronto Area"],
+      "availableChannel": { "@type": "ServiceChannel", "serviceUrl": "https://bratcommunity.com/corporate.html" },
+      "offers": [
+        { "@type": "Offer", "name": "SHOW UP READY: 90-minute team workshop", "price": "1500", "priceCurrency": "CAD" },
+        { "@type": "Offer", "name": "READY IN REAL TIME: two-session skills program", "price": "4800", "priceCurrency": "CAD" },
+        { "@type": "Offer", "name": "LEAD WITH PRESENCE: leadership practice", "price": "8500", "priceCurrency": "CAD" },
+        { "@type": "Offer", "name": "RESET & CONNECT: 2-hour team session", "price": "2250", "priceCurrency": "CAD" },
+        { "@type": "Offer", "name": "REAL MOMENT LAB: custom preparation", "price": "8500", "priceCurrency": "CAD" }
+      ]
+    }
+    </script>
+
+    <style>
+        /* Layout concept: a buyer's story in one scroll. Ivory pages, black stages, one blue act.
+           The only theatrical flourish is the screenplay block in "The moment". */
+        :root {
+            --ivory: #EBE7DC;
+            --paper: #F5F2EA;
+            --card: #FBF9F4;
+            --ink: #1A1A1A;
+            --ink-2: #45443F;
+            --mute: #6B6A63;
+            --line: #D3CDBE;
+            --black: #0B0B0C;
+            --stage: #141416;
+            --stage-line: #2A2A2E;
+            --on-dark: #F2EFE7;
+            --on-dark-2: #BDBAB1;
+            --blue: #0045D6;
+            --blue-deep: #0036A8;
+            --blue-soft: #A9BFE8;
+            --steel: #8BA8C2;
+
+            /* names used by js/form-handler.js for its status messages */
+            --color-accent: #0045D6;
+            --color-accent-light: #0036A8;
+
+            --f-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --f-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            --f-script: 'Courier Prime', 'Courier New', Courier, monospace;
+
+            --wrap: 1200px;
+            --gutter: clamp(16px, 4vw, 32px);
+            --header-h: 76px;
+            --radius: 6px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 16px); }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+        body {
+            font-family: var(--f-body);
+            font-size: 17px;
+            line-height: 1.55;
+            color: var(--ink);
+            background: var(--ivory);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        img, video { display: block; max-width: 100%; }
+        a { color: inherit; }
+        :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+        .cx-dark :focus-visible, .cx-blue :focus-visible { outline-color: var(--on-dark); }
+
+        .cx-skip { position: absolute; left: 16px; top: -60px; z-index: 100; background: var(--ink); color: var(--on-dark); padding: 10px 14px; border-radius: 4px; }
+        .cx-skip:focus { top: 12px; }
+        .cx-wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
+        .cx-sec { position: relative; padding-block: clamp(64px, 9vw, 120px); }
+        .cx-dark { background: var(--black); color: var(--on-dark); }
+        .cx-blue { background: var(--blue); color: var(--on-dark); }
+        .cx-paper { background: var(--paper); }
+
+        /* Type */
+        .cx-eyebrow {
+            font-family: var(--f-body);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 16px;
+        }
+        .cx-dark .cx-eyebrow { color: var(--steel); }
+        .cx-blue .cx-eyebrow { color: var(--blue-soft); }
+        .cx-h1, .cx-h2, .cx-h3 { font-family: var(--f-display); font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+        .cx-h1 { font-size: clamp(2.5rem, 1.6rem + 4.2vw, 5rem); line-height: 1.02; }
+        .cx-h2 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.5rem); line-height: 1.06; }
+        .cx-h3 { font-size: clamp(1.35rem, 1.15rem + 0.8vw, 1.75rem); line-height: 1.15; }
+        .cx-h2 em, .cx-h1 em { font-style: italic; font-weight: 400; }
+        .cx-lead { font-size: clamp(1.06rem, 1rem + 0.35vw, 1.25rem); line-height: 1.55; color: var(--ink-2); max-width: 62ch; }
+        .cx-dark .cx-lead, .cx-blue .cx-lead { color: var(--on-dark-2); }
+        .cx-blue .cx-lead { color: #DCE5F7; }
+        .cx-body { color: var(--ink-2); max-width: 64ch; }
+        .cx-head { max-width: 760px; margin-bottom: clamp(36px, 5vw, 56px); }
+        .cx-head .cx-lead { margin-top: 18px; }
+        .cx-small { font-size: 14px; color: var(--mute); }
+        .cx-dark .cx-small { color: var(--on-dark-2); }
+
+        /* Buttons */
+        .cx-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            min-height: 52px; padding: 14px 28px;
+            font-family: var(--f-body); font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+            text-decoration: none; text-align: center;
+            background: var(--blue); color: #FFFFFF; border: 2px solid var(--blue); border-radius: 4px;
+            cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+        }
+        .cx-btn:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
+        .cx-btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+        .cx-btn--ghost:hover { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+        .cx-btn--light { background: var(--on-dark); color: var(--blue); border-color: var(--on-dark); }
+        .cx-btn--light:hover { background: #FFFFFF; border-color: #FFFFFF; color: var(--blue-deep); }
+        .cx-link { font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+        .cx-link:hover { opacity: .8; }
+
+        /* Torn paper edges (same shape as the rest of the site) */
+        .cx-tear { position: absolute; left: 0; right: 0; height: 40px; line-height: 0; pointer-events: none; z-index: 2; }
+        .cx-tear svg { width: 100%; height: 100%; display: block; }
+        .cx-tear--top { top: -1px; }
+        .cx-tear--bottom { bottom: -1px; }
+
+        /* Header */
+        .cx-header {
+            position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--header-h);
+            background: rgba(235, 231, 220, 0.94);
+            -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .cx-header__inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .cx-logo { display: block; width: 128px; height: 52px; background: url('images/logo.svg') left center / contain no-repeat; font-size: 0; color: transparent; }
+        .cx-nav { display: flex; align-items: center; gap: 28px; }
+        .cx-nav a:not(.cx-btn) { font-size: 15px; font-weight: 500; text-decoration: none; color: var(--ink); }
+        .cx-nav a[aria-current="page"] { color: var(--blue); }
+        .cx-nav .cx-btn { min-height: 44px; padding: 10px 18px; font-size: 13px; }
+        .cx-nav-toggle { display: none; width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer; }
+        .cx-nav-toggle span { display: block; width: 26px; height: 2px; margin: 6px auto; background: var(--ink); transition: transform .2s ease, opacity .2s ease; }
+        @media (max-width: 860px) {
+            .cx-nav-toggle { display: block; }
+            .cx-nav {
+                position: fixed; top: var(--header-h); left: 0; right: 0;
+                flex-direction: column; align-items: stretch; gap: 0;
+                padding: 8px var(--gutter) 24px; background: var(--ivory);
+                border-bottom: 1px solid var(--line);
+                display: none;
+            }
+            .cx-nav.is-open { display: flex; }
+            .cx-nav a:not(.cx-btn) { padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+            .cx-nav .cx-btn { margin-top: 16px; min-height: 52px; }
+            .cx-nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+            .cx-nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+            .cx-nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        }
+
+        /* Hero */
+        .cx-hero { position: relative; padding-top: calc(var(--header-h) + clamp(48px, 8vw, 104px)); padding-bottom: clamp(88px, 10vw, 136px); overflow: hidden; }
+        .cx-hero__photo { position: absolute; inset: 0; z-index: 0; }
+        .cx-hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 55%; }
+        .cx-hero__photo::after {
+            content: ""; position: absolute; inset: 0;
+            background: linear-gradient(90deg, rgba(11,11,12,0.97) 0%, rgba(11,11,12,0.92) 42%, rgba(11,11,12,0.55) 72%, rgba(11,11,12,0.35) 100%);
+        }
+        .cx-hero .cx-wrap { position: relative; z-index: 1; }
+        .cx-hero__copy { max-width: 760px; }
+        .cx-hero .cx-h1 em { color: var(--steel); }
+        .cx-hero .cx-lead { margin-top: 24px; max-width: 56ch; color: #D9D6CD; }
+        .cx-hero__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; margin-top: 36px; }
+        .cx-hero__ctas .cx-link { color: var(--on-dark); }
+        .cx-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(48px, 7vw, 80px); border-top: 1px solid rgba(242,239,231,0.18); max-width: 980px; }
+        .cx-fact { padding: 18px 20px 0 0; }
+        .cx-fact + .cx-fact { padding-left: 20px; border-left: 1px solid rgba(242,239,231,0.18); }
+        .cx-fact dt { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--steel); }
+        .cx-fact dd { margin-top: 6px; font-family: var(--f-display); font-size: clamp(1.15rem, 1rem + .6vw, 1.5rem); font-weight: 700; color: var(--on-dark); }
+        @media (max-width: 760px) {
+            .cx-hero__photo::after { background: linear-gradient(180deg, rgba(11,11,12,0.78) 0%, rgba(11,11,12,0.92) 45%, rgba(11,11,12,0.97) 100%); }
+            .cx-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .cx-fact:nth-child(3) { padding-left: 0; border-left: 0; }
+            .cx-fact:nth-child(n+3) { border-top: 1px solid rgba(242,239,231,0.18); margin-top: 18px; }
+        }
+
+        /* Why now */
+        .cx-split { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
+        .cx-split--flip { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); }
+        .cx-why .cx-h2 span { color: var(--blue); }
+        .cx-why .cx-body { margin-top: 24px; font-size: 18px; }
+        .cx-why__punch { margin-top: 20px; font-weight: 700; font-size: 18px; color: var(--ink); }
+        .cx-photo { position: relative; border-radius: var(--radius); overflow: hidden; background: #D8D2C4; }
+        .cx-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .cx-why__photo { aspect-ratio: 4 / 5; max-height: 640px; }
+        .cx-why__photo img { object-position: 50% 30%; }
+        .cx-caption { position: absolute; left: 16px; bottom: 16px; right: 16px; font-size: 13px; color: #F2EFE7; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+        @media (max-width: 860px) {
+            .cx-split, .cx-split--flip { grid-template-columns: minmax(0, 1fr); }
+            .cx-why__photo { aspect-ratio: 4 / 3; }
+        }
+
+        /* The moment: screenplay */
+        .cx-moment__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+        .cx-moment .cx-h2 span { color: var(--steel); }
+        .cx-moment .cx-lead { margin-top: 24px; }
+        .cx-script {
+            font-family: var(--f-script);
+            background: #F3F0E6; color: #1C1B18;
+            border-radius: 3px; padding: clamp(24px, 4vw, 48px) clamp(20px, 4vw, 56px);
+            box-shadow: 0 30px 60px rgba(0,0,0,.45);
+            transform: rotate(-0.6deg);
+            font-size: 17px; line-height: 1.5;
+        }
+        .cx-script__slug { font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
+        .cx-script__action { margin-top: 18px; max-width: 46ch; }
+        .cx-script__char { margin-top: 22px; text-align: center; text-transform: uppercase; font-weight: 700; }
+        .cx-script__paren { text-align: center; font-style: italic; color: #4A4840; }
+        .cx-script__line { margin: 2px auto 0; max-width: 34ch; text-align: center; }
+        .cx-script__beat { display: block; margin-top: 14px; padding-left: 14px; border-left: 3px solid var(--blue); font-style: italic; }
+        .cx-script__cut { margin-top: 24px; text-align: right; font-weight: 700; text-transform: uppercase; }
+        .cx-script__pagenum { float: right; font-size: 13px; color: #6B6A63; }
+        @media (max-width: 860px) { .cx-moment__grid { grid-template-columns: minmax(0, 1fr); } .cx-script { transform: none; } }
+
+        /* Outcomes */
+        .cx-outcomes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+        .cx-outcome { padding: 28px 28px 32px 0; border-bottom: 1px solid var(--line); }
+        .cx-outcome:not(:nth-child(3n+1)) { padding-left: 28px; border-left: 1px solid var(--line); }
+        .cx-outcome h3 { font-family: var(--f-display); font-size: 1.35rem; line-height: 1.2; font-weight: 700; }
+        .cx-outcome p { margin-top: 10px; color: var(--ink-2); font-size: 16px; }
+        .cx-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 40px; }
+        .cx-result { background: var(--ink); color: var(--on-dark); border-radius: var(--radius); padding: 28px 32px; }
+        .cx-result strong { display: block; font-family: var(--f-display); font-size: 1.5rem; line-height: 1.2; }
+        .cx-result p { margin-top: 8px; color: var(--on-dark-2); font-size: 16px; }
+        @media (max-width: 900px) {
+            .cx-outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .cx-outcome:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
+            .cx-outcome:nth-child(2n) { padding-left: 24px; border-left: 1px solid var(--line); }
+            .cx-outcome { padding-right: 24px; }
+        }
+        @media (max-width: 600px) {
+            .cx-outcomes, .cx-results { grid-template-columns: minmax(0, 1fr); }
+            .cx-outcome:nth-child(2n) { padding-left: 0; border-left: 0; }
+            .cx-outcome { padding: 20px 0 22px; }
+        }
+
+        /* Method */
+        .cx-cycle { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); counter-reset: step; }
+        .cx-cycle li { position: relative; padding: 24px 24px 0 0; border-top: 2px solid rgba(242,239,231,0.85); }
+        .cx-cycle li + li { padding-left: 24px; }
+        .cx-cycle li::before {
+            counter-increment: step; content: "0" counter(step);
+            display: block; font-family: var(--f-script); font-weight: 700; font-size: 15px; color: var(--blue-soft); margin-bottom: 10px;
+        }
+        .cx-cycle h3 { font-family: var(--f-display); font-size: 1.6rem; font-weight: 700; }
+        .cx-cycle p { margin-top: 8px; color: #DCE5F7; font-size: 16px; }
+        .cx-loop {
+            margin-top: clamp(48px, 7vw, 88px);
+            display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(28px, 5vw, 64px); align-items: center;
+        }
+        .cx-loop__line { font-family: var(--f-display); font-size: clamp(2rem, 1.3rem + 3vw, 4rem); line-height: 1.05; font-weight: 700; letter-spacing: -0.02em; }
+        .cx-loop__line em { font-weight: 400; }
+        .cx-loop p { margin-top: 20px; color: #DCE5F7; max-width: 48ch; }
+        .cx-loop__photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .cx-loop__photos .cx-photo { aspect-ratio: 4 / 5; }
+        .cx-loop__photos .cx-photo:nth-child(2) { margin-top: 40px; }
+        .cx-source { margin-top: 40px; font-family: var(--f-script); font-size: 15px; color: var(--blue-soft); }
+        @media (max-width: 900px) {
+            .cx-cycle { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 32px; }
+            .cx-cycle li:nth-child(3) { padding-left: 0; }
+            .cx-loop { grid-template-columns: minmax(0, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .cx-loop__photos { grid-template-columns: minmax(0, 1fr); }
+            .cx-loop__photos .cx-photo { aspect-ratio: 4 / 3; }
+            .cx-loop__photos .cx-photo:nth-child(2) { display: none; }
+        }
+        @media (max-width: 520px) {
+            .cx-cycle { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
+            .cx-cycle li, .cx-cycle li + li { padding-left: 0; padding-right: 0; }
+        }
+
+        /* Safe */
+        .cx-safe__photo { aspect-ratio: 3 / 4; max-height: 620px; }
+        .cx-safe__list { list-style: none; margin-top: 32px; display: grid; gap: 0; }
+        .cx-safe__list li { padding: 20px 0; border-top: 1px solid var(--line); }
+        .cx-safe__list li:last-child { border-bottom: 1px solid var(--line); }
+        .cx-safe__list strong { display: block; font-family: var(--f-display); font-size: 1.35rem; line-height: 1.2; }
+        .cx-safe__list p { margin-top: 6px; color: var(--ink-2); font-size: 16px; }
+        @media (max-width: 860px) { .cx-safe__photo { aspect-ratio: 4 / 3; order: 2; } }
+
+        /* Chooser */
+        .cx-chooser { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-bottom: clamp(48px, 7vw, 80px); }
+        .cx-chooser__q { padding: clamp(24px, 3.5vw, 40px); border-right: 1px solid var(--line); }
+        .cx-chooser__q h3 { font-family: var(--f-display); font-size: 1.5rem; line-height: 1.2; }
+        .cx-chooser__q p { margin-top: 6px; color: var(--mute); font-size: 15px; }
+        .cx-options { list-style: none; margin-top: 20px; display: grid; gap: 8px; }
+        .cx-option {
+            width: 100%; text-align: left; font: inherit; font-size: 16px; line-height: 1.35; color: var(--ink);
+            background: transparent; border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px 14px 46px; cursor: pointer; position: relative;
+            transition: border-color .15s ease, background .15s ease;
+        }
+        .cx-option::before { content: ""; position: absolute; left: 16px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border: 2px solid var(--mute); border-radius: 50%; }
+        .cx-option:hover { border-color: var(--ink); }
+        .cx-option[aria-pressed="true"] { border-color: var(--blue); background: #E8EEFB; }
+        .cx-option[aria-pressed="true"]::before { border-color: var(--blue); background: radial-gradient(circle, var(--blue) 0 45%, transparent 50%); }
+        .cx-chooser__a { padding: clamp(24px, 3.5vw, 40px); background: var(--ink); color: var(--on-dark); display: flex; flex-direction: column; }
+        .cx-chooser__a .cx-eyebrow { color: var(--steel); }
+        .cx-chooser__name { font-family: var(--f-display); font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.5rem); line-height: 1.05; font-weight: 700; letter-spacing: -0.01em; }
+        .cx-chooser__why { margin-top: 14px; color: var(--on-dark-2); }
+        .cx-chooser__meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--stage-line); font-size: 15px; color: var(--on-dark-2); }
+        .cx-chooser__price { margin-top: 6px; font-family: var(--f-display); font-size: 1.5rem; font-weight: 700; }
+        .cx-chooser__price small { font-family: var(--f-body); font-size: 14px; font-weight: 400; color: var(--on-dark-2); }
+        .cx-chooser__actions { margin-top: auto; padding-top: 24px; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; }
+        .cx-chooser__actions .cx-link { color: var(--on-dark); font-size: 15px; }
+        @media (max-width: 860px) { .cx-chooser { grid-template-columns: minmax(0, 1fr); } .cx-chooser__q { border-right: 0; border-bottom: 1px solid var(--line); } }
+
+        /* Programs */
+        .cx-group-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
+        .cx-group-head h3 { font-family: var(--f-display); font-size: clamp(1.4rem, 1.2rem + .8vw, 1.9rem); }
+        .cx-group-head p { color: var(--mute); font-size: 15px; }
+        .cx-progs { display: grid; gap: 20px; }
+        .cx-progs--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .cx-progs--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 0; }
+        .cx-prog {
+            position: relative; display: flex; flex-direction: column;
+            background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+            padding: 28px 26px 26px; scroll-margin-top: calc(var(--header-h) + 24px);
+        }
+        .cx-prog--core { border: 2px solid var(--blue); }
+        .cx-prog.is-match { box-shadow: 0 0 0 4px rgba(0, 69, 214, .18); border-color: var(--blue); }
+        .cx-prog__step { font-family: var(--f-script); font-weight: 700; font-size: 15px; color: var(--blue); }
+        .cx-prog__badge { position: absolute; top: -13px; right: 20px; background: var(--blue); color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 10px; border-radius: 3px; }
+        .cx-prog__stream { margin-top: 6px; font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+        .cx-prog__title { margin-top: 10px; font-family: var(--f-display); font-size: 1.75rem; line-height: 1.05; font-weight: 800; letter-spacing: -0.01em; }
+        .cx-prog__hook { margin-top: 10px; font-size: 17px; font-weight: 600; line-height: 1.4; }
+        .cx-prog__fit { margin-top: 12px; font-size: 15px; color: var(--ink-2); }
+        .cx-prog__fit strong { color: var(--ink); }
+        .cx-prog__label { margin-top: 18px; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+        .cx-ticks { list-style: none; margin-top: 8px; display: grid; gap: 8px; }
+        .cx-ticks li { position: relative; padding-left: 26px; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+        .cx-ticks li::before { content: ""; position: absolute; left: 2px; top: 6px; width: 12px; height: 7px; border-left: 2px solid var(--blue); border-bottom: 2px solid var(--blue); transform: rotate(-45deg); }
+        .cx-prog details { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 12px; }
+        .cx-prog summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center; min-height: 32px; }
+        .cx-prog summary::-webkit-details-marker { display: none; }
+        .cx-prog summary::after { content: "+"; font-size: 20px; font-weight: 400; color: var(--blue); }
+        .cx-prog details[open] summary::after { content: "−"; }
+        .cx-prog details .cx-ticks { margin-top: 10px; }
+        .cx-prog__depth { margin-top: 12px; font-size: 14px; color: var(--mute); }
+        .cx-prog__foot { margin-top: auto; padding-top: 22px; }
+        .cx-prog__meta { font-size: 14px; color: var(--mute); padding-top: 16px; border-top: 1px solid var(--line); }
+        .cx-prog__price { margin-top: 6px; font-family: var(--f-display); font-size: 1.6rem; font-weight: 700; }
+        .cx-prog__price span { font-family: var(--f-body); font-size: 14px; font-weight: 500; color: var(--mute); }
+        .cx-prog__price small { font-family: var(--f-body); font-size: 13px; font-weight: 400; color: var(--mute); }
+        .cx-prog .cx-btn { width: 100%; margin-top: 16px; }
+        .cx-progs-gap { height: clamp(40px, 6vw, 64px); }
+        .cx-prices-note { margin-top: 24px; font-size: 14px; color: var(--mute); }
+        @media (max-width: 1000px) { .cx-progs--3 { grid-template-columns: minmax(0, 1fr); } .cx-progs--3 .cx-prog--core { order: -1; } }
+        @media (max-width: 760px) { .cx-progs--2 { grid-template-columns: minmax(0, 1fr); } }
+
+        /* Included + measurement */
+        .cx-terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+        .cx-term { border-top: 2px solid var(--ink); padding-top: 20px; }
+        .cx-term h3 { font-family: var(--f-display); font-size: 1.35rem; line-height: 1.2; }
+        .cx-term .cx-ticks { margin-top: 14px; }
+        .cx-term--muted .cx-ticks li::before { border-color: var(--mute); }
+        .cx-term p { margin-top: 12px; font-size: 15px; color: var(--ink-2); }
+        .cx-honest { margin-top: clamp(40px, 6vw, 64px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+        .cx-honest__card { background: var(--ink); color: var(--on-dark); border-radius: var(--radius); padding: 28px 32px; }
+        .cx-honest__card h3 { font-family: var(--f-display); font-size: 1.4rem; }
+        .cx-honest__card .cx-ticks li { color: var(--on-dark-2); }
+        .cx-honest__card .cx-ticks li::before { border-color: var(--steel); }
+        .cx-honest__note { grid-column: 1 / -1; font-family: var(--f-display); font-style: italic; font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); line-height: 1.4; max-width: 60ch; }
+        @media (max-width: 860px) { .cx-terms, .cx-honest { grid-template-columns: minmax(0, 1fr); } }
+
+        /* Founder */
+        .cx-founder { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+        .cx-founder__media { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; }
+        .cx-founder__portrait { grid-row: span 2; aspect-ratio: 4 / 5; }
+        .cx-founder__portrait img { object-position: 50% 25%; }
+        .cx-founder__video { position: relative; border-radius: var(--radius); overflow: hidden; background: var(--stage); }
+        .cx-founder__video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+        .cx-founder__video, .cx-founder__still { height: 100%; min-height: 0; }
+        .cx-founder .cx-h2 { margin-top: 4px; }
+        .cx-founder__role { margin-top: 10px; font-weight: 600; color: var(--steel); }
+        .cx-founder .cx-body { margin-top: 20px; color: var(--on-dark-2); font-size: 18px; }
+        .cx-founder__langs { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .cx-founder__langs span { border: 1px solid var(--stage-line); border-radius: 999px; padding: 6px 14px; font-size: 14px; color: var(--on-dark); }
+        .cx-founder__actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; }
+        .cx-founder__actions .cx-link { color: var(--on-dark); }
+        .cx-motto { margin-top: 36px; font-family: var(--f-script); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: 14px; color: var(--steel); }
+        @media (max-width: 860px) { .cx-founder { grid-template-columns: minmax(0, 1fr); } .cx-founder__media { max-width: 520px; } }
+        @media (max-width: 600px) { .cx-founder__media { grid-template-columns: minmax(0, 1fr); } .cx-founder__video, .cx-founder__still { display: none; } }
+
+        /* FAQ */
+        .cx-faq { max-width: 860px; }
+        .cx-faq details { border-top: 1px solid var(--line); }
+        .cx-faq details:last-child { border-bottom: 1px solid var(--line); }
+        .cx-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 22px 0; font-family: var(--f-display); font-size: clamp(1.15rem, 1.05rem + .4vw, 1.35rem); font-weight: 700; line-height: 1.3; }
+        .cx-faq summary::-webkit-details-marker { display: none; }
+        .cx-faq summary::after { content: "+"; flex: none; font-family: var(--f-body); font-weight: 400; font-size: 26px; color: var(--blue); line-height: 1; }
+        .cx-faq details[open] summary::after { content: "−"; }
+        .cx-faq details p { padding: 0 0 24px; color: var(--ink-2); max-width: 70ch; }
+
+        /* Inquiry */
+        .cx-inquiry__grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+        .cx-inquiry .cx-h2 { color: #FFFFFF; }
+        .cx-inquiry .cx-lead { margin-top: 18px; }
+        .cx-steps { list-style: none; margin-top: 36px; display: grid; gap: 22px; }
+        .cx-steps li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 16px; align-items: start; }
+        .cx-steps b { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--on-dark); font-family: var(--f-display); font-size: 1.2rem; }
+        .cx-steps strong { display: block; font-size: 17px; }
+        .cx-steps p { margin-top: 2px; color: #DCE5F7; font-size: 15px; }
+        .cx-mail { margin-top: 36px; font-size: 15px; color: #DCE5F7; }
+        .cx-mail a { color: #FFFFFF; font-weight: 600; }
+        .cx-form-card { background: var(--card); color: var(--ink); border-radius: var(--radius); padding: clamp(24px, 4vw, 44px); box-shadow: 0 30px 60px rgba(0, 20, 70, .35); }
+        .corporate-form__selection { margin-bottom: 18px; padding: 12px 14px; border-left: 3px solid var(--blue); background: #E8EEFB; font-weight: 600; font-size: 15px; }
+        .cx-form-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 16px; }
+        .form-group { margin-bottom: 18px; }
+        .form-label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 600; }
+        .form-input, .form-textarea {
+            width: 100%; font: inherit; font-size: 16px; color: var(--ink);
+            background: #FFFFFF; border: 1px solid #BEB7A6; border-radius: 4px; padding: 13px 14px;
+        }
+        .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(0, 69, 214, .2); }
+        .form-textarea { resize: vertical; min-height: 132px; }
+        .form-honeypot { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+        #corporate-form { position: relative; }
+        #corporate-form .cx-btn { width: 100%; min-height: 58px; font-size: 15px; }
+        .corporate-form__microcopy { margin-top: 14px; font-size: 14px; color: var(--mute); text-align: center; }
+        .corporate-form__microcopy a { color: var(--blue); }
+        @media (max-width: 900px) { .cx-inquiry__grid { grid-template-columns: minmax(0, 1fr); } }
+        @media (max-width: 520px) { .cx-form-grid { grid-template-columns: minmax(0, 1fr); } }
+
+        /* Footer */
+        .cx-footer { background: var(--black); color: var(--on-dark-2); padding-block: 64px 32px; }
+        .cx-footer__top { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+        .cx-footer .cx-logo { filter: brightness(0) invert(1); opacity: .92; }
+        .cx-footer__brand p { margin-top: 16px; max-width: 40ch; font-size: 15px; }
+        .cx-footer h4 { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark); margin-bottom: 14px; }
+        .cx-footer ul { list-style: none; display: grid; gap: 10px; }
+        .cx-footer a { text-decoration: none; font-size: 15px; }
+        .cx-footer a:hover { color: var(--on-dark); }
+        .cx-footer__bottom { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--stage-line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; }
+        .cx-footer__social { display: flex; gap: 16px; }
+        .cx-footer__social a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--stage-line); border-radius: 50%; }
+        @media (max-width: 700px) { .cx-footer__top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .cx-footer__brand { grid-column: 1 / -1; } }
+
+        /* Sticky mobile CTA */
+        .cx-sticky {
+            position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+            padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom, 0px));
+            background: rgba(11, 11, 12, .96); border-top: 1px solid var(--stage-line);
+            display: none; align-items: center; justify-content: space-between; gap: 12px;
+            transform: translateY(110%); transition: transform .25s ease;
+        }
+        .cx-sticky p { color: var(--on-dark); font-size: 14px; line-height: 1.3; }
+        .cx-sticky p span { display: block; color: var(--on-dark-2); font-size: 13px; }
+        .cx-sticky .cx-btn { min-height: 46px; padding: 10px 16px; font-size: 13px; flex: none; }
+        .cx-sticky.is-visible { transform: translateY(0); }
+        @media (max-width: 760px) { .cx-sticky { display: flex; } }
+    </style>
 </head>
 
-<body class="theme-light corporate-page">
-    <!-- SVG Torn Paper Filter -->
-    <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
-        <defs>
-            <filter id="torn-paper-filter">
-                <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G" />
-            </filter>
-        </defs>
-    </svg>
+<body>
+    <a href="#main" class="cx-skip">Skip to content</a>
+
     <!-- Header -->
-    <header class="header">
-        <div class="container header__inner">
-            <a href="index.html" class="logo">BRAT<span>.</span>Studio</a>
-            <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav">
+    <header class="cx-header">
+        <div class="cx-wrap cx-header__inner">
+            <a href="index.html" class="cx-logo">BRAT Studio</a>
+            <button class="cx-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="cx-nav">
                 <span></span><span></span><span></span>
             </button>
-            <nav class="nav" id="nav" aria-label="Primary navigation">
-                <a href="index.html" class="nav__link">Home</a>
-                <a href="about.html" class="nav__link">About</a>
-                <a href="corporate.html" class="nav__link nav__link--active">Corporate</a>
-                <a href="programs.html" class="nav__link">Programs</a>
-                <a href="#inquiry" class="btn btn--primary">Plan a Team Workshop</a>
+            <nav class="cx-nav" id="cx-nav" aria-label="Primary navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="corporate.html" aria-current="page">Corporate</a>
+                <a href="programs.html">Programs</a>
+                <a href="#inquiry" class="cx-btn">Plan a team workshop</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero hero--short hero--dark">
-        <div class="hero__bg"></div>
-        <div class="hero__overlay"></div>
-        <div class="hero__content">
-            <p class="hero__tagline">Practical Workplace Training for Teams</p>
-            <h1 class="hero__title">Help Employees Stay Steady, Speak Clearly and Adapt in Real Time.</h1>
-            <p class="hero__subtitle">For meetings and calls where people tense up, rush or lose the thread. Practise
-                how to reset, make the point and keep going.</p>
-            <div class="hero__cta mt-8">
-                <a href="#inquiry" class="btn btn--primary btn--large">Plan a Team Workshop</a>
-                <a href="#programs" class="corporate-hero__secondary-link">View Programs &amp; Pricing <span
-                        aria-hidden="true">→</span></a>
-            </div>
-            <p class="corporate-hero__meta">Toronto &amp; GTA · Onsite or live virtual · No acting experience required</p>
-        </div>
+    <main id="main">
 
-        <!-- Bottom Torn Paper Divider -->
-        <div class="divider-torn divider-torn--bottom">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z" />
-            </svg>
+    <!-- 1. Hero -->
+    <section class="cx-hero cx-dark" aria-labelledby="hero-title">
+        <div class="cx-hero__photo" aria-hidden="true">
+            <img src="images/corporate/session-circle.webp" alt="" width="1600" height="1060" fetchpriority="high" decoding="async">
+        </div>
+        <div class="cx-wrap">
+            <div class="cx-hero__copy">
+                <p class="cx-eyebrow">Corporate training · Toronto, GTA &amp; live virtual</p>
+                <h1 class="cx-h1" id="hero-title">Don’t teach your team what to say. <em>Train them for what happens next.</em></h1>
+                <p class="cx-lead">Practical communication and presence training for the meetings, calls and conversations that can’t be scripted. Built from actor preparation. No acting experience required.</p>
+                <div class="cx-hero__ctas">
+                    <a href="#inquiry" class="cx-btn">Plan a team workshop</a>
+                    <a href="#programs" class="cx-link">See programs and prices <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+            <dl class="cx-facts">
+                <div class="cx-fact"><dt>Format</dt><dd>From 90 minutes</dd></div>
+                <div class="cx-fact"><dt>Group size</dt><dd>Up to 16 people</dd></div>
+                <div class="cx-fact"><dt>Where</dt><dd>Onsite or virtual</dd></div>
+                <div class="cx-fact"><dt>Starting at</dt><dd>CAD 1,500</dd></div>
+            </dl>
+        </div>
+        <div class="cx-tear cx-tear--bottom" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EBE7DC" d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z"/></svg>
         </div>
     </section>
 
-    <!-- Employee Outcomes -->
-    <section class="section corporate-methodology" id="methodology">
-        <div class="container">
-            <div class="corporate-story-problem" data-animate>
-                <p class="section-header__label">The Familiar Work Moment</p>
-                <h2>They know the work. Then pressure makes them rush, tighten up or lose the thread.</h2>
-                <ul aria-label="Common workplace reactions">
-                    <li>Their body tightens</li>
-                    <li>They rush the opening</li>
-                    <li>They second-guess the point</li>
-                    <li>One interruption breaks the flow</li>
+    <!-- 2. Why now -->
+    <section class="cx-sec cx-why" aria-labelledby="why-title">
+        <div class="cx-wrap cx-split">
+            <div>
+                <p class="cx-eyebrow">Why now</p>
+                <h2 class="cx-h2" id="why-title">AI can find the words. <span>People still have to make them land.</span></h2>
+                <p class="cx-body">AI can draft the deck, structure the pitch and prepare the talking points. It can’t walk into the room, read the person across the table or recover when the plan breaks.</p>
+                <p class="cx-why__punch">That live part is a skill. Skills can be practised. BRAT trains them.</p>
+            </div>
+            <figure class="cx-photo cx-why__photo">
+                <img src="images/corporate/participant-speaking.webp" alt="A participant speaks to the group during a BRAT session" width="800" height="1255" loading="lazy" decoding="async">
+            </figure>
+        </div>
+    </section>
+
+    <!-- 3. The moment -->
+    <section class="cx-sec cx-dark cx-moment" aria-labelledby="moment-title">
+        <div class="cx-tear cx-tear--top" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EBE7DC" d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z"/></svg>
+        </div>
+        <div class="cx-wrap cx-moment__grid">
+            <div>
+                <p class="cx-eyebrow">The familiar work moment</p>
+                <h2 class="cx-h2" id="moment-title">They know the work. <span>Then pressure makes them rush, tighten up or lose the thread.</span></h2>
+                <p class="cx-lead">It happens in team updates, client calls and one-to-ones. Capable people hold back, over-explain or start again from the top. Nothing is wrong with their ideas. The moment gets ahead of them.</p>
+            </div>
+            <div class="cx-script" role="img" aria-label="A short scene written as a script: an employee in a team meeting tenses up, rushes the opening, second-guesses the point and loses the thread after one interruption.">
+                <p><span class="cx-script__slug">Int. Team meeting – 9:02 AM</span> <span class="cx-script__pagenum">1.</span></p>
+                <p class="cx-script__action">The update is ready. The slides are good. Every head turns to SAM.</p>
+                <span class="cx-script__beat">Shoulders tighten before the first word.</span>
+                <span class="cx-script__beat">The opening comes out rushed.</span>
+                <span class="cx-script__beat">The main point gets second-guessed.</span>
+                <p class="cx-script__char">Manager</p>
+                <p class="cx-script__paren">(cutting in)</p>
+                <p class="cx-script__line">Sorry, quick question before you go on…</p>
+                <span class="cx-script__beat">One interruption, and the thread is gone.</span>
+                <p class="cx-script__cut">Cut to: BRAT session.</p>
+            </div>
+        </div>
+        <div class="cx-tear cx-tear--bottom" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EBE7DC" d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z"/></svg>
+        </div>
+    </section>
+
+    <!-- 4. Outcomes -->
+    <section class="cx-sec" id="outcomes" aria-labelledby="outcomes-title">
+        <div class="cx-wrap">
+            <div class="cx-head">
+                <p class="cx-eyebrow">What changes for employees</p>
+                <h2 class="cx-h2" id="outcomes-title">Six things people take into the next meeting.</h2>
+            </div>
+            <div class="cx-outcomes">
+                <article class="cx-outcome"><h3>Feel steadier before speaking</h3><p>A short body-and-breath routine to settle before the meeting begins.</p></article>
+                <article class="cx-outcome"><h3>Speak up more comfortably</h3><p>Start at a manageable pace instead of rushing to get it over with.</p></article>
+                <article class="cx-outcome"><h3>Be heard without forcing it</h3><p>Voice, pace, posture and gesture that make the main point easier to follow.</p></article>
+                <article class="cx-outcome"><h3>Keep one thought clear</h3><p>Choose the main idea, finish it, and stop burying it in extra explanation.</p></article>
+                <article class="cx-outcome"><h3>Focus on the person, not yourself</h3><p>Attention moves from how you look to what is actually happening.</p></article>
+                <article class="cx-outcome"><h3>Recover and keep going</h3><p>Continue after a pause, interruption or unexpected question without starting over.</p></article>
+            </div>
+            <div class="cx-results">
+                <div class="cx-result"><strong>More people contribute.</strong><p>Capable employees take the floor without holding back or rushing through the point.</p></div>
+                <div class="cx-result"><strong>Ideas land more clearly.</strong><p>Less over-explaining, fewer restarts and shared cues for getting a conversation back on track.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Method -->
+    <section class="cx-sec cx-blue" id="method" aria-labelledby="method-title">
+        <div class="cx-tear cx-tear--top" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EBE7DC" d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z"/></svg>
+        </div>
+        <div class="cx-wrap">
+            <div class="cx-head">
+                <p class="cx-eyebrow">How BRAT works</p>
+                <h2 class="cx-h2" id="method-title">Prepare. Express. Notice. Adapt.</h2>
+                <p class="cx-lead">Every session runs the same practical cycle, adapted from how actors prepare for a live performance and applied to your team’s real work situations.</p>
+            </div>
+            <ol class="cx-cycle">
+                <li><h3>Prepare</h3><p>Settle body and breath. Walk in with one clear purpose.</p></li>
+                <li><h3>Express</h3><p>Clarify the point and say it at a steady pace.</p></li>
+                <li><h3>Notice</h3><p>Listen to the response instead of rehearsing the answer.</p></li>
+                <li><h3>Adapt</h3><p>Adjust after an interruption and keep going.</p></li>
+            </ol>
+            <div class="cx-loop">
+                <div>
+                    <p class="cx-loop__line">Try the moment. Add one tool. <em>Try again.</em></p>
+                    <p>Practice you can observe. Every exercise gets a first and a second attempt, so people leave with a routine they can reuse at work, not a handout.</p>
+                </div>
+                <div class="cx-loop__photos">
+                    <figure class="cx-photo"><img src="images/corporate/pair-conversation.webp" alt="Two participants in conversation during an exercise" width="680" height="485" loading="lazy" decoding="async"></figure>
+                    <figure class="cx-photo"><img src="images/corporate/group-circle.webp" alt="A small group working in a circle" width="680" height="484" loading="lazy" decoding="async"></figure>
+                </div>
+            </div>
+            <p class="cx-source">Informed by established acting, voice, movement and improvisation practices.</p>
+        </div>
+        <div class="cx-tear cx-tear--bottom" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EBE7DC" d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z"/></svg>
+        </div>
+    </section>
+
+    <!-- 6. Safe -->
+    <section class="cx-sec" id="safe" aria-labelledby="safe-title">
+        <div class="cx-wrap cx-split cx-split--flip">
+            <figure class="cx-photo cx-safe__photo">
+                <img src="images/corporate/team-laughing.webp" alt="Participants laughing together during a session" width="710" height="1011" loading="lazy" decoding="async">
+            </figure>
+            <div>
+                <p class="cx-eyebrow">Safe to take part</p>
+                <h2 class="cx-h2" id="safe-title">Built for reserved and skeptical teams.</h2>
+                <ul class="cx-safe__list">
+                    <li><strong>No characters.</strong><p>This is not an acting class. Nobody plays a role. BRAT adapts grounding, voice, intention and live response to real work situations.</p></li>
+                    <li><strong>No surprise spotlight.</strong><p>Activities begin in pairs or small groups. Nobody is put on the spot for a solo performance.</p></li>
+                    <li><strong>No forced sharing.</strong><p>No forced personal disclosure and no public employee assessment.</p></li>
+                    <li><strong>Agreed in advance.</strong><p>Participation and accessibility needs are agreed in the planning call, before anyone walks into the room.</p></li>
                 </ul>
             </div>
-
-            <div class="section-header" data-animate>
-                <p class="section-header__label">What Changes for Employees</p>
-                <h2 class="section-header__title">What people can feel and do differently.</h2>
-                <p class="section-header__text">Six practical changes they can take into the next meeting or call.</p>
-            </div>
-
-            <div class="grid corporate-methodology-grid corporate-outcomes-grid">
-                <article class="corporate-methodology-card" data-animate>
-                    <div class="corporate-methodology-card__topline">
-                        <span>01</span>
-                        <p>Feel Steadier Before You Speak</p>
-                    </div>
-                    <p class="corporate-methodology-card__copy">Use a short body-and-breath routine to settle before the
-                        meeting begins.</p>
-                </article>
-
-                <article class="corporate-methodology-card" data-animate>
-                    <div class="corporate-methodology-card__topline">
-                        <span>02</span>
-                        <p>Speak Up More Comfortably</p>
-                    </div>
-                    <p class="corporate-methodology-card__copy">Start at a manageable pace instead of rushing to get it
-                        over with.</p>
-                </article>
-
-                <article class="corporate-methodology-card" data-animate>
-                    <div class="corporate-methodology-card__topline">
-                        <span>03</span>
-                        <p>Be Heard Without Forcing It</p>
-                    </div>
-                    <p class="corporate-methodology-card__copy">Use voice, pace, posture and gesture so the main point is
-                        easier to follow.</p>
-                </article>
-
-                <article class="corporate-methodology-card" data-animate>
-                    <div class="corporate-methodology-card__topline">
-                        <span>04</span>
-                        <p>Keep One Thought Clear</p>
-                    </div>
-                    <p class="corporate-methodology-card__copy">Choose the main idea, finish it and avoid burying it in
-                        extra explanation.</p>
-                </article>
-
-                <article class="corporate-methodology-card" data-animate>
-                    <div class="corporate-methodology-card__topline">
-                        <span>05</span>
-                        <p>Focus on the Person, Not Yourself</p>
-                    </div>
-                    <p class="corporate-methodology-card__copy">Move attention away from how you look and respond to
-                        what is actually happening.</p>
-                </article>
-
-                <article class="corporate-methodology-card" data-animate>
-                    <div class="corporate-methodology-card__topline">
-                        <span>06</span>
-                        <p>Recover and Keep Going</p>
-                    </div>
-                    <p class="corporate-methodology-card__copy">Continue after a pause, interruption or unexpected
-                        question without starting over.</p>
-                </article>
-            </div>
-
-            <div class="grid grid-2 corporate-company-results">
-                <div class="corporate-company-result" data-animate>
-                    <span>More people contribute</span>
-                    <strong>Designed to help capable employees take the floor without holding back or rushing through
-                        the point.</strong>
-                </div>
-                <div class="corporate-company-result" data-animate>
-                    <span>Ideas land more clearly</span>
-                    <strong>Less over-explaining, fewer restarts and shared cues for getting the conversation back on
-                        track.</strong>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Corporate Programs -->
-    <section class="section" id="programs">
-        <div class="container">
-            <div class="section-header" data-animate>
-                <p class="section-header__label">Team Programs</p>
-                <h2 class="section-header__title">Choose what your team needs now.</h2>
-                <p class="section-header__text">Build practical skills, bring people together or prepare one
-                    critical moment.</p>
+    <!-- 7. Programs -->
+    <section class="cx-sec cx-paper" id="programs" aria-labelledby="programs-title">
+        <div class="cx-wrap">
+            <div class="cx-head">
+                <p class="cx-eyebrow">Programs and prices</p>
+                <h2 class="cx-h2" id="programs-title">Start small. Grow into lasting skills.</h2>
+                <p class="cx-lead">Five formats, one method. Pick by the situation your team is in, or tell us the situation and BRAT will recommend the format.</p>
             </div>
 
-            <div class="corporate-program-group-header" data-animate>
-                <p class="section-header__label">Build Everyday Skills</p>
-                <h3>Start small. Build the skills. Apply them to leadership.</h3>
+            <!-- Chooser -->
+            <div class="cx-chooser" id="chooser">
+                <div class="cx-chooser__q">
+                    <h3 id="chooser-title">What is happening on your team?</h3>
+                    <p>Choose the closest situation to see where to start.</p>
+                    <ul class="cx-options" aria-labelledby="chooser-title">
+                        <li><button type="button" class="cx-option" data-pick="show-up-ready" aria-pressed="true">People arrive tense and rush the first sentence</button></li>
+                        <li><button type="button" class="cx-option" data-pick="ready-real-time" aria-pressed="false">People rush, over-explain or go blank after a question</button></li>
+                        <li><button type="button" class="cx-option" data-pick="lead-presence" aria-pressed="false">A manager faces pushback or a tense one-to-one</button></li>
+                        <li><button type="button" class="cx-option" data-pick="reset-connect" aria-pressed="false">We have an offsite, team day or onboarding coming up</button></li>
+                        <li><button type="button" class="cx-option" data-pick="real-moment" aria-pressed="false">A launch, announcement or client meeting can’t be a first attempt</button></li>
+                    </ul>
+                </div>
+                <div class="cx-chooser__a" aria-live="polite">
+                    <p class="cx-eyebrow">Recommended starting point</p>
+                    <p class="cx-chooser__name" id="pick-name">SHOW UP READY</p>
+                    <p class="cx-chooser__why" id="pick-why">One shared pre-meeting routine: settle before the meeting and start without rushing.</p>
+                    <div class="cx-chooser__meta">
+                        <span id="pick-meta">90 minutes · up to 8 participants · onsite or live virtual</span>
+                        <p class="cx-chooser__price" id="pick-price">From CAD 1,500 <small>+ applicable tax</small></p>
+                    </div>
+                    <div class="cx-chooser__actions">
+                        <a href="#inquiry" class="cx-btn cx-btn--light" id="pick-cta" data-corporate-program="show-up-ready">Plan this workshop</a>
+                        <a href="#program-intro" class="cx-link" id="pick-details">See details</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid corporate-programs-grid corporate-programs-grid--skills">
-                <article class="corporate-program-card" id="program-intro" data-animate>
-                    <p class="corporate-program-card__stream">90-Minute Team Workshop</p>
-                    <h3 class="corporate-program-card__title">SHOW UP READY</h3>
-                    <p class="corporate-program-card__hook">Settle before the meeting. Start without rushing.</p>
-                    <p class="corporate-program-card__fit"><strong>Best for:</strong> A small team where people arrive
-                        tense, hold their breath or rush the first sentence.</p>
-                    <p class="corporate-program-card__outcome-label">Employees practise how to</p>
-                    <ul class="corporate-program-card__outcomes">
+            <!-- Everyday skills -->
+            <div class="cx-group-head">
+                <h3>Build everyday skills</h3>
+                <p>Start with one routine, grow into core skills, then apply them to leadership.</p>
+            </div>
+            <div class="cx-progs cx-progs--3">
+                <article class="cx-prog" id="program-intro">
+                    <p class="cx-prog__step">Step 1 · Start here</p>
+                    <p class="cx-prog__stream">90-minute team workshop</p>
+                    <h3 class="cx-prog__title">SHOW UP READY</h3>
+                    <p class="cx-prog__hook">Settle before the meeting. Start without rushing.</p>
+                    <p class="cx-prog__fit"><strong>Best for:</strong> a small team where people arrive tense, hold their breath or rush the first sentence.</p>
+                    <p class="cx-prog__label">Employees practise how to</p>
+                    <ul class="cx-ticks">
                         <li>Reset body and breath before the meeting starts</li>
                         <li>Say the first sentence at a steady pace</li>
                         <li>Enter with one clear purpose</li>
                     </ul>
-                    <div class="corporate-program-card__company-value">
-                        <p>For the company</p>
-                        <ul>
+                    <details>
+                        <summary>For the company</summary>
+                        <ul class="cx-ticks">
                             <li>One shared pre-meeting routine the team can reuse</li>
                             <li>A fixed 90-minute workshop without a longer commitment</li>
                         </ul>
-                    </div>
-                    <p class="corporate-program-card__format">90 minutes · Up to 8 participants · Onsite or live virtual</p>
-                    <div class="corporate-program-card__commercial">
-                        <p class="corporate-program-card__price">Starting at CAD 1,500 <small>+ applicable tax</small></p>
-                        <p class="corporate-program-card__note"><strong>Depth:</strong> One shared routine and one brief
-                            practice. No custom scenarios or individual coaching.</p>
-                        <a href="#inquiry" class="btn btn--outline" data-corporate-program="show-up-ready">Plan This
-                            Workshop</a>
+                        <p class="cx-prog__depth"><strong>Depth:</strong> one shared routine and one brief practice. No custom scenarios or individual coaching.</p>
+                    </details>
+                    <div class="cx-prog__foot">
+                        <p class="cx-prog__meta">90 minutes · up to 8 participants · onsite or live virtual</p>
+                        <p class="cx-prog__price"><span>From</span> CAD 1,500 <small>+ tax</small></p>
+                        <a href="#inquiry" class="cx-btn cx-btn--ghost" data-corporate-program="show-up-ready">Plan this workshop</a>
                     </div>
                 </article>
 
-                <article class="corporate-program-card corporate-program-card--featured" id="program-ready" data-animate>
-                    <p class="corporate-program-card__badge">Core Skills Program</p>
-                    <p class="corporate-program-card__stream">Two-Session Skills Program</p>
-                    <h3 class="corporate-program-card__title">READY IN REAL TIME</h3>
-                    <p class="corporate-program-card__hook">Speak clearly when attention turns to you. Get the thread
-                        back when the plan breaks.</p>
-                    <p class="corporate-program-card__fit"><strong>Best for:</strong> Employees who rush, over-explain,
-                        go blank after a question or disappear in a group discussion.</p>
-                    <p class="corporate-program-card__outcome-label">Employees practise how to</p>
-                    <ul class="corporate-program-card__outcomes">
+                <article class="cx-prog cx-prog--core" id="program-ready">
+                    <p class="cx-prog__badge">Core skills program</p>
+                    <p class="cx-prog__step">Step 2 · Build the skills</p>
+                    <p class="cx-prog__stream">Two-session skills program</p>
+                    <h3 class="cx-prog__title">READY IN REAL TIME</h3>
+                    <p class="cx-prog__hook">Speak clearly when attention turns to you. Get the thread back when the plan breaks.</p>
+                    <p class="cx-prog__fit"><strong>Best for:</strong> employees who rush, over-explain, go blank after a question or disappear in a group discussion.</p>
+                    <p class="cx-prog__label">Employees practise how to</p>
+                    <ul class="cx-ticks">
                         <li>Start without rushing the opening</li>
                         <li>Make one main point easy to follow</li>
                         <li>Listen to the question instead of rehearsing the answer</li>
                         <li>Continue after an interruption or blank</li>
                     </ul>
-                    <div class="corporate-program-card__company-value">
-                        <p>For the company</p>
-                        <ul>
+                    <details>
+                        <summary>For the company</summary>
+                        <ul class="cx-ticks">
                             <li>Real work situations agreed with the team</li>
                             <li>Two attempts per exercise, a planning call and a 14-day follow-up</li>
                         </ul>
-                    </div>
-                    <p class="corporate-program-card__format">Two 2.5-hour sessions · Up to 8 participants · Onsite or
-                        live virtual</p>
-                    <div class="corporate-program-card__commercial">
-                        <p class="corporate-program-card__price">Starting at CAD 4,800 <small>+ applicable tax</small></p>
-                        <p class="corporate-program-card__note"><strong>Depth:</strong> Two sessions, real work
-                            situations, repeat attempts and follow-up.</p>
-                        <a href="#inquiry" class="btn btn--primary" data-corporate-program="ready-real-time">Plan the
-                            Skills Program</a>
+                        <p class="cx-prog__depth"><strong>Depth:</strong> two sessions, real work situations, repeat attempts and follow-up.</p>
+                    </details>
+                    <div class="cx-prog__foot">
+                        <p class="cx-prog__meta">Two 2.5-hour sessions · up to 8 participants · onsite or live virtual</p>
+                        <p class="cx-prog__price"><span>From</span> CAD 4,800 <small>+ tax</small></p>
+                        <a href="#inquiry" class="cx-btn" data-corporate-program="ready-real-time">Plan the skills program</a>
                     </div>
                 </article>
 
-                <article class="corporate-program-card" id="program-lead" data-animate>
-                    <p class="corporate-program-card__stream">Leadership Practice · Two Sessions</p>
-                    <h3 class="corporate-program-card__title">LEAD WITH PRESENCE</h3>
-                    <p class="corporate-program-card__hook">Say what needs to be said. Stay steady when pushback comes.</p>
-                    <p class="corporate-program-card__fit"><strong>Best for:</strong> Managers preparing for a tense
-                        one-to-one, a team update or a decision people may resist.</p>
-                    <p class="corporate-program-card__outcome-label">Leaders practise how to</p>
-                    <ul class="corporate-program-card__outcomes">
+                <article class="cx-prog" id="program-lead">
+                    <p class="cx-prog__step">Step 3 · For leaders</p>
+                    <p class="cx-prog__stream">Leadership practice · two sessions</p>
+                    <h3 class="cx-prog__title">LEAD WITH PRESENCE</h3>
+                    <p class="cx-prog__hook">Say what needs to be said. Stay steady when pushback comes.</p>
+                    <p class="cx-prog__fit"><strong>Best for:</strong> managers preparing for a tense one-to-one, a team update or a decision people may resist.</p>
+                    <p class="cx-prog__label">Leaders practise how to</p>
+                    <ul class="cx-ticks">
                         <li>Open a difficult conversation without circling the point</li>
                         <li>Hear resistance without jumping to defend</li>
                         <li>Pause, adjust and keep the decision clear</li>
                     </ul>
-                    <div class="corporate-program-card__company-value">
-                        <p>For the company</p>
-                        <ul>
+                    <details>
+                        <summary>For the company</summary>
+                        <ul class="cx-ticks">
                             <li>Practice around one real upcoming conversation per leader</li>
                             <li>Individual review and a personal application plan</li>
                         </ul>
-                    </div>
-                    <p class="corporate-program-card__format">Two 3-hour sessions · Up to 4 leaders · Individual reviews</p>
-                    <div class="corporate-program-card__commercial">
-                        <p class="corporate-program-card__price">Starting at CAD 8,500 <small>+ applicable tax</small></p>
-                        <p class="corporate-program-card__note"><strong>Depth:</strong> Small leadership cohort,
-                            individual review and a personal application plan.</p>
-                        <a href="#inquiry" class="btn btn--outline" data-corporate-program="lead-presence">Plan
-                            Leadership Training</a>
+                        <p class="cx-prog__depth"><strong>Depth:</strong> small leadership cohort, individual review and a personal application plan.</p>
+                    </details>
+                    <div class="cx-prog__foot">
+                        <p class="cx-prog__meta">Two 3-hour sessions · up to 4 leaders · individual reviews</p>
+                        <p class="cx-prog__price"><span>From</span> CAD 8,500 <small>+ tax</small></p>
+                        <a href="#inquiry" class="cx-btn cx-btn--ghost" data-corporate-program="lead-presence">Plan leadership training</a>
                     </div>
                 </article>
             </div>
 
-            <div class="corporate-program-group-header corporate-program-group-header--secondary" data-animate>
-                <p class="section-header__label">Team Building or Custom</p>
-                <h3>A team experience—or custom preparation for one critical moment.</h3>
-            </div>
+            <div class="cx-progs-gap" aria-hidden="true"></div>
 
-            <div class="grid corporate-programs-grid corporate-programs-grid--routes">
-                <article class="corporate-program-card" id="program-reset" data-animate>
-                    <p class="corporate-program-card__stream">Team Building &amp; Offsites · 2 Hours</p>
-                    <h3 class="corporate-program-card__title">RESET &amp; CONNECT</h3>
-                    <p class="corporate-program-card__hook">Help people mix beyond their usual circles—without forced
-                        fun or forced sharing.</p>
-                    <p class="corporate-program-card__fit"><strong>Best for:</strong> Team days, offsites and onboarding
-                        where the same people always talk and others hang back.</p>
-                    <p class="corporate-program-card__outcome-label">During the session, people</p>
-                    <ul class="corporate-program-card__outcomes">
+            <!-- One moment -->
+            <div class="cx-group-head">
+                <h3>For one team moment</h3>
+                <p>A team experience, or custom preparation for one critical event.</p>
+            </div>
+            <div class="cx-progs cx-progs--2">
+                <article class="cx-prog" id="program-reset">
+                    <p class="cx-prog__stream">Team building &amp; offsites · 2 hours</p>
+                    <h3 class="cx-prog__title">RESET &amp; CONNECT</h3>
+                    <p class="cx-prog__hook">Help people mix beyond their usual circles, without forced fun or forced sharing.</p>
+                    <p class="cx-prog__fit"><strong>Best for:</strong> team days, offsites and onboarding where the same people always talk and others hang back.</p>
+                    <p class="cx-prog__label">During the session, people</p>
+                    <ul class="cx-ticks">
                         <li>Settle in and join without being put on the spot</li>
                         <li>Talk with colleagues beyond their usual work circle</li>
                         <li>Take part without solo performance or personal sharing</li>
                     </ul>
-                    <div class="corporate-program-card__company-value">
-                        <p>For the company</p>
-                        <ul>
+                    <details>
+                        <summary>For the company</summary>
+                        <ul class="cx-ticks">
                             <li>A low-pressure, structured two-hour offsite session</li>
                             <li>Interaction across usual circles without another lecture</li>
                         </ul>
-                    </div>
-                    <p class="corporate-program-card__format">2 hours · Up to 16 participants · Onsite or live virtual</p>
-                    <div class="corporate-program-card__commercial">
-                        <p class="corporate-program-card__price">Starting at CAD 2,250 <small>+ applicable tax</small></p>
-                        <p class="corporate-program-card__note"><strong>Depth:</strong> One shared team experience—not
-                            a skills-development series.</p>
-                        <a href="#inquiry" class="btn btn--outline" data-corporate-program="reset-connect">Plan a Team
-                            Experience</a>
+                        <p class="cx-prog__depth"><strong>Depth:</strong> one shared team experience, not a skills-development series.</p>
+                    </details>
+                    <div class="cx-prog__foot">
+                        <p class="cx-prog__meta">2 hours · up to 16 participants · onsite or live virtual</p>
+                        <p class="cx-prog__price"><span>From</span> CAD 2,250 <small>+ tax</small></p>
+                        <a href="#inquiry" class="cx-btn cx-btn--ghost" data-corporate-program="reset-connect">Plan a team experience</a>
                     </div>
                 </article>
 
-                <article class="corporate-program-card" id="program-custom" data-animate>
-                    <p class="corporate-program-card__stream">Custom Strategic Preparation</p>
-                    <h3 class="corporate-program-card__title">REAL MOMENT LAB</h3>
-                    <p class="corporate-program-card__hook">Don’t let the first real attempt happen live.</p>
-                    <p class="corporate-program-card__fit"><strong>Best for:</strong> A launch, company announcement,
-                        client meeting or transition that cannot be left to a first live attempt.</p>
-                    <p class="corporate-program-card__outcome-label">Participants practise how to</p>
-                    <ul class="corporate-program-card__outcomes">
+                <article class="cx-prog" id="program-custom">
+                    <p class="cx-prog__stream">Custom strategic preparation</p>
+                    <h3 class="cx-prog__title">REAL MOMENT LAB</h3>
+                    <p class="cx-prog__hook">Don’t let the first real attempt happen live.</p>
+                    <p class="cx-prog__fit"><strong>Best for:</strong> a launch, company announcement, client meeting or transition that can’t be left to a first live attempt.</p>
+                    <p class="cx-prog__label">Participants practise how to</p>
+                    <ul class="cx-ticks">
                         <li>Open clearly and land the main point</li>
                         <li>Pressure-test likely questions and interruptions</li>
                         <li>Recover if the conversation changes direction</li>
                     </ul>
-                    <div class="corporate-program-card__company-value">
-                        <p>For the company</p>
-                        <ul>
+                    <details>
+                        <summary>For the company</summary>
+                        <ul class="cx-ticks">
                             <li>One approved scenario built around the real event</li>
                             <li>Team recap with observations and next steps</li>
                         </ul>
-                    </div>
-                    <p class="corporate-program-card__format">Full day or two half-days · 6–8 participants</p>
-                    <div class="corporate-program-card__commercial">
-                        <p class="corporate-program-card__price">Starting at CAD 8,500 <small>+ applicable tax</small></p>
-                        <p class="corporate-program-card__note"><strong>Depth:</strong> Custom scenario design for one
-                            critical company moment. Facts and approved answers stay with your organization.</p>
-                        <a href="#inquiry" class="btn btn--outline" data-corporate-program="real-moment">Plan a Custom
-                            Lab</a>
+                        <p class="cx-prog__depth"><strong>Depth:</strong> custom scenario design for one critical company moment. Facts and approved answers stay with your organization.</p>
+                    </details>
+                    <div class="cx-prog__foot">
+                        <p class="cx-prog__meta">Full day or two half-days · 6–8 participants</p>
+                        <p class="cx-prog__price"><span>From</span> CAD 8,500 <small>+ tax</small></p>
+                        <a href="#inquiry" class="cx-btn cx-btn--ghost" data-corporate-program="real-moment">Plan a custom lab</a>
                     </div>
                 </article>
             </div>
+            <p class="cx-prices-note">Starting prices in CAD plus applicable tax. Larger teams need another facilitator or a second cohort.</p>
         </div>
     </section>
 
-    <!-- How BRAT Works -->
-    <section class="section section--dark corporate-impact" id="benefits">
-        <!-- Top Torn Paper Divider -->
-        <div class="divider-torn divider-torn--top">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z" />
-            </svg>
-        </div>
-
-        <div class="container">
-            <div class="section-header" data-animate>
-                <p class="section-header__label">How BRAT Works</p>
-                <h2 class="section-header__title">Prepare. Express. Notice. Adapt.</h2>
-                <p class="section-header__text">Every session follows the same practical cycle: prepare the person,
-                    clarify the point, notice the response, adjust and continue.</p>
+    <!-- 8. Included + measurement -->
+    <section class="cx-sec" id="customization" aria-labelledby="terms-title">
+        <div class="cx-wrap">
+            <div class="cx-head">
+                <p class="cx-eyebrow">Built around your team</p>
+                <h2 class="cx-h2" id="terms-title">One method. Your real situations.</h2>
+                <p class="cx-lead">BRAT adapts the focus, language, examples and agreed work situations, and keeps the practice structure that makes it work.</p>
             </div>
-
-            <div class="grid grid-2 corporate-deliverables-grid">
-                <div class="corporate-boundary-note" data-animate>
-                    <strong>Practice you can observe</strong>
-                    <p>Try the moment. Add one tool. Try again. Leave with a routine that can be reused at work.</p>
-                </div>
-                <div class="corporate-boundary-note" data-animate>
-                    <strong>Simple, responsible measurement</strong>
-                    <p>Track participation, usefulness, readiness and intended use. Core programs can include a 14-day
-                        use check.</p>
-                </div>
-            </div>
-
-            <p class="corporate-methodology__source-note corporate-methodology__source-note--dark">Informed by
-                established acting, voice, movement and improvisation practices.</p>
-        </div>
-
-        <!-- Bottom Torn Paper Divider -->
-        <div class="divider-torn divider-torn--bottom">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z" />
-            </svg>
-        </div>
-    </section>
-
-    <!-- Process & Customization -->
-    <section class="section corporate-buying" id="customization">
-        <div class="container">
-            <div class="section-header" data-animate>
-                <p class="section-header__label">How It Starts</p>
-                <h2 class="section-header__title">Three steps from interest to workshop.</h2>
-            </div>
-
-            <div class="grid grid-3 corporate-process-grid">
-                <div class="corporate-process-step" data-animate>
-                    <div class="corporate-process-step__number">1</div>
-                    <h4 class="mb-4">Describe the Situation</h4>
-                    <p>Tell us where the team gets stuck and what should work better.</p>
-                </div>
-                <div class="corporate-process-step" data-animate>
-                    <div class="corporate-process-step__number">2</div>
-                    <h4 class="mb-4">Review the Recommendation</h4>
-                    <p>BRAT recommends the program, group size, timing and starting price.</p>
-                </div>
-                <div class="corporate-process-step" data-animate>
-                    <div class="corporate-process-step__number">3</div>
-                    <h4 class="mb-4">Confirm the Workshop</h4>
-                    <p>Agree the date, participants, logistics and pre-session planning call.</p>
-                </div>
-            </div>
-
-            <div class="section-header corporate-section-subheader" data-animate>
-                <p class="section-header__label">Customization</p>
-                <h2 class="section-header__title">Structured program. Relevant to your team.</h2>
-                <p class="section-header__text">BRAT adapts the focus, language and agreed work situations while keeping
-                    the practice structure consistent.</p>
-            </div>
-
-            <div class="grid grid-2 corporate-customization-grid">
-                <div class="corporate-value-card" data-animate>
-                    <p class="corporate-value-card__label">Included in the starting price</p>
-                    <ul class="corporate-check-list">
+            <div class="cx-terms">
+                <div class="cx-term">
+                    <h3>Included in the starting price</h3>
+                    <ul class="cx-ticks">
                         <li>One planning call</li>
                         <li>Agreed program focus and work situations</li>
                         <li>Participant materials</li>
                         <li>Short team recap, where applicable</li>
                     </ul>
                 </div>
-                <div class="corporate-value-card" data-animate>
-                    <p class="corporate-value-card__label">Available as add-ons</p>
-                    <ul class="corporate-check-list">
+                <div class="cx-term cx-term--muted">
+                    <h3>Available as add-ons</h3>
+                    <ul class="cx-ticks">
                         <li>Deeper scenario design</li>
                         <li>Reinforcement session</li>
                         <li>Additional cohort or facilitator</li>
                         <li>Venue and travel</li>
                     </ul>
                 </div>
+                <div class="cx-term">
+                    <h3>Your content stays yours</h3>
+                    <p>BRAT adapts the application, not the entire program. Your organization stays responsible for factual content, policies and approved answers.</p>
+                </div>
             </div>
 
-            <div class="corporate-boundary-note corporate-boundary-note--light" data-animate>
-                <strong>Built for your team, not rebuilt from scratch.</strong>
-                <p>BRAT adapts the application, not the entire program. Your organization remains responsible for
-                    factual content, policies and approved answers.</p>
+            <div class="cx-honest">
+                <div class="cx-honest__card">
+                    <h3>What BRAT tracks</h3>
+                    <ul class="cx-ticks">
+                        <li>Attendance and participation</li>
+                        <li>Participant-rated usefulness and readiness</li>
+                        <li>Intended use at work</li>
+                        <li>Reported use after 14 days, in core programs</li>
+                    </ul>
+                </div>
+                <div class="cx-honest__card">
+                    <h3>What one workshop can change</h3>
+                    <ul class="cx-ticks">
+                        <li>A preparation routine people can reuse</li>
+                        <li>Individual cues for each participant</li>
+                        <li>Observable first and second attempts</li>
+                    </ul>
+                </div>
+                <p class="cx-honest__note">An honest note: stable behavioural or business change needs repeated practice. That is why the programs are built to grow from one routine into lasting skills.</p>
             </div>
         </div>
-
     </section>
 
-    <!-- Founder -->
-    <section class="section" id="session-method">
-        <div class="container">
-            <div class="grid grid-2 corporate-founder-grid">
-                <div class="session-preview" data-animate>
-                    <video autoplay loop muted playsinline preload="metadata">
+    <!-- 9. Founder -->
+    <section class="cx-sec cx-dark" id="session-method" aria-labelledby="founder-title">
+        <div class="cx-tear cx-tear--top" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EBE7DC" d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z"/></svg>
+        </div>
+        <div class="cx-wrap cx-founder">
+            <div class="cx-founder__media">
+                <figure class="cx-photo cx-founder__portrait">
+                    <img src="images/corporate/kateryna-bratchyna.webp" alt="Kateryna Bratchyna, founder of BRAT Studio" width="800" height="1000" loading="lazy" decoding="async">
+                </figure>
+                <div class="cx-founder__video">
+                    <video autoplay loop muted playsinline preload="metadata" poster="images/corporate/group-circle.webp" aria-label="Short clip from a BRAT session">
                         <source src="video/IMG_8411-web.m4v" type="video/mp4">
                     </video>
                 </div>
-
-                <div class="corporate-founder-copy" data-animate>
-                    <p class="section-header__label">Who leads the work</p>
-                    <h2>Kateryna Bratchyna</h2>
-                    <p class="lead"><strong>Founder &amp; Communication Coach.</strong> Kateryna brings professional acting
-                        and teaching experience into practical workplace training for non-actors.</p>
-                    <p>Her sessions adapt actor preparation into practical exercises for meetings, calls and other live
-                        work moments.</p>
-                    <div class="corporate-founder-copy__actions">
-                        <a href="#inquiry" class="btn btn--primary">Plan a Team Workshop</a>
-                        <a class="corporate-facilitator-note__link"
-                            href="https://www.linkedin.com/in/kateryna-bratchyna-172901272/" target="_blank"
-                            rel="noopener noreferrer">View Kateryna's LinkedIn profile</a>
-                    </div>
+                <figure class="cx-photo cx-founder__still"><img src="images/corporate/team-hug.webp" alt="Participants hugging at the end of a session" width="748" height="543" loading="lazy" decoding="async"></figure>
+            </div>
+            <div>
+                <p class="cx-eyebrow">Who leads the work</p>
+                <h2 class="cx-h2" id="founder-title">Kateryna Bratchyna</h2>
+                <p class="cx-founder__role">Founder &amp; communication coach</p>
+                <p class="cx-body">A professional actress with years of experience in theatre and film. Kateryna brings acting and teaching experience into practical workplace training for non-actors, turning actor preparation into exercises for meetings, calls and other live work moments.</p>
+                <div class="cx-founder__langs" aria-label="Session languages">
+                    <span>English</span><span>Ukrainian</span><span>Russian</span>
                 </div>
+                <div class="cx-founder__actions">
+                    <a href="#inquiry" class="cx-btn cx-btn--light">Plan a team workshop</a>
+                    <a class="cx-link" href="https://www.linkedin.com/in/kateryna-bratchyna-172901272/" target="_blank" rel="noopener noreferrer">Kateryna on LinkedIn <span aria-hidden="true">↗</span></a>
+                </div>
+                <p class="cx-motto">Bold · Raw · Alive · Truthful</p>
+            </div>
+        </div>
+        <div class="cx-tear cx-tear--bottom" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EBE7DC" d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z"/></svg>
+        </div>
+    </section>
+
+    <!-- 10. FAQ -->
+    <section class="cx-sec" id="faq" aria-labelledby="faq-title">
+        <div class="cx-wrap">
+            <div class="cx-head">
+                <p class="cx-eyebrow">Questions</p>
+                <h2 class="cx-h2" id="faq-title">What HR, L&amp;D and team leaders ask first.</h2>
+            </div>
+            <div class="cx-faq">
+                <details>
+                    <summary>Is this an acting class?</summary>
+                    <p>No. Participants do not play characters. BRAT adapts actor preparation (grounding, voice, intention and live response) to real workplace situations.</p>
+                </details>
+                <details>
+                    <summary>Which program is the best starting point?</summary>
+                    <p>Choose SHOW UP READY for one preparation routine, READY IN REAL TIME for core employee skills, LEAD WITH PRESENCE for managers, RESET &amp; CONNECT for an offsite, or REAL MOMENT LAB for one critical company situation. Not sure? Describe the situation in the form below and BRAT will recommend one.</p>
+                </details>
+                <details>
+                    <summary>What can be customized and what is included?</summary>
+                    <p>BRAT adapts the focus, language, examples and agreed work situations. Starting prices include one planning call, the selected program, participant materials and a short team recap. Deeper scenario design, additional facilitators, travel and follow-up sessions are quoted separately.</p>
+                </details>
+                <details>
+                    <summary>How many people can participate?</summary>
+                    <p>SHOW UP READY and READY IN REAL TIME support up to eight people. LEAD WITH PRESENCE supports up to four leaders. RESET &amp; CONNECT supports up to 16. Larger teams need another facilitator or a second cohort.</p>
+                </details>
+                <details>
+                    <summary>What if employees are reserved or skeptical?</summary>
+                    <p>Activities begin in pairs or small groups. There is no surprise solo performance, forced personal disclosure or public employee assessment. Participation and accessibility needs can be agreed during the planning call.</p>
+                </details>
+                <details>
+                    <summary>What can one workshop realistically change?</summary>
+                    <p>One workshop can give participants a preparation routine, individual cues and observable first and second attempts. BRAT can track attendance, participant-rated usefulness and reported use after 14 days. Stable behavioural or business change requires repeated practice.</p>
+                </details>
+                <details>
+                    <summary>Where do sessions take place, and in which languages?</summary>
+                    <p>Onsite in Toronto and the GTA, or live virtual. Sessions are available in English, Ukrainian and Russian.</p>
+                </details>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section for Corporate -->
-    <section class="section section--dark" id="faq">
-        <!-- Top Torn Paper Divider -->
-        <div class="divider-torn divider-torn--top">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z" />
-            </svg>
+    <!-- 11. Inquiry -->
+    <section class="cx-sec cx-blue cx-inquiry" id="inquiry" aria-labelledby="corporate-inquiry-title">
+        <div class="cx-tear cx-tear--top" aria-hidden="true">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EBE7DC" d="M0,0 L1440,0 L1440,40 C1320,30 1200,50 1080,45 C960,40 840,25 720,35 C600,45 480,55 360,40 C240,25 120,45 0,35 Z"/></svg>
         </div>
-
-        <div class="container container--narrow">
-            <div class="section-header" data-animate>
-                <p class="section-header__label">Questions</p>
-                <h2 class="section-header__title">Frequently Asked</h2>
-                <p class="section-header__text">
-                    What HR, L&amp;D and team leaders usually need to know before choosing a format.
-                </p>
+        <div class="cx-wrap cx-inquiry__grid">
+            <div>
+                <p class="cx-eyebrow">Get started</p>
+                <h2 class="cx-h2" id="corporate-inquiry-title">Tell us what your team needs.</h2>
+                <p class="cx-lead">Share four details. BRAT replies with a recommended format, starting price and available dates.</p>
+                <ol class="cx-steps">
+                    <li><b>1</b><div><strong>Describe the situation</strong><p>Where the team gets stuck and what should work better.</p></div></li>
+                    <li><b>2</b><div><strong>Get a recommendation</strong><p>Program, group size, timing and starting price.</p></div></li>
+                    <li><b>3</b><div><strong>Confirm the workshop</strong><p>Date, participants, logistics and the planning call.</p></div></li>
+                </ol>
+                <p class="cx-mail">Prefer email? <a href="mailto:hello@bratcommunity.com">hello@bratcommunity.com</a></p>
             </div>
 
-            <div class="faq-list" data-animate>
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Is this an acting class?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>No. Participants do not play characters. BRAT adapts actor preparation—grounding, voice,
-                            intention and live response—to real workplace situations.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Which program is the best starting point?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Choose SHOW UP READY for one preparation routine, READY IN REAL TIME for core employee skills,
-                            LEAD WITH PRESENCE for managers, RESET &amp; CONNECT for an offsite, or REAL MOMENT LAB for one
-                            critical company situation.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What can be customized and what is included?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>BRAT adapts the focus, language, examples and agreed work situations. Starting prices include
-                            one planning call, the selected program, participant materials and a short team recap.
-                            Deeper scenario design, additional facilitators, travel and follow-up sessions are quoted separately.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>How many people can participate?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>SHOW UP READY and READY IN REAL TIME support up to eight people. LEAD WITH PRESENCE supports up
-                            to four leaders. RESET &amp; CONNECT supports up to 16. Larger teams need another facilitator
-                            or a second cohort.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What if employees are reserved or skeptical?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Activities begin in pairs or small groups. There is no surprise solo performance, forced
-                            personal disclosure or public employee assessment. Participation and accessibility needs
-                            can be agreed during the planning call.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>What can one workshop realistically change?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>One workshop can give participants a preparation routine, individual cues and observable
-                            first-and-second attempts. BRAT can track attendance, participant-rated usefulness and
-                            reported use after 14 days. Stable behavioural or business change requires repeated practice.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12" data-animate>
-                <p style="color: var(--color-gray-400); margin-bottom: 1.5rem;">Ready to explore a workshop for your team?</p>
-                <a href="#inquiry" class="btn btn--primary">Plan a Team Workshop</a>
-            </div>
-        </div>
-
-        <!-- Bottom Torn Paper Divider -->
-        <div class="divider-torn divider-torn--bottom">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="#EBE7DC" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,60 L1440,60 L1440,20 C1320,10 1200,30 1080,25 C960,20 840,5 720,15 C600,25 480,35 360,20 C240,5 120,25 0,15 Z" />
-            </svg>
-        </div>
-    </section>
-
-    <!-- Inquiry Form -->
-    <section class="section" id="inquiry" aria-labelledby="corporate-inquiry-title">
-        <div class="container container--narrow">
-            <div class="section-header" data-animate>
-                <p class="section-header__label">Get Started</p>
-                <h2 class="section-header__title" id="corporate-inquiry-title">Tell us what your team needs.</h2>
-                <p class="section-header__text">Share four details. BRAT will reply with a recommended format, starting
-                    price and available dates.</p>
-                <p class="corporate-form__selection" id="corporate-program-selection" role="status" aria-live="polite"
-                    hidden></p>
-            </div>
-
-            <form id="corporate-form" class="mt-12" data-animate method="POST"
-                action="https://docs.google.com/forms/d/e/1FAIpQLSeF-2c7GomPWT1I8b411MqqwQ42vLu7kMFBh9ZTi4u-ONMu2g/formResponse">
-                <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off"
-                    aria-hidden="true">
-                <div class="grid grid-2">
-                    <div class="form-group">
-                        <label class="form-label" for="company">Company Name *</label>
-                        <input type="text" id="company" name="company" class="form-input" required>
+            <div class="cx-form-card">
+                <p class="corporate-form__selection" id="corporate-program-selection" role="status" aria-live="polite" hidden></p>
+                <form id="corporate-form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSeF-2c7GomPWT1I8b411MqqwQ42vLu7kMFBh9ZTi4u-ONMu2g/formResponse">
+                    <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <div class="cx-form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="company">Company name *</label>
+                            <input type="text" id="company" name="company" class="form-input" autocomplete="organization" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="name">Your name *</label>
+                            <input type="text" id="name" name="name" class="form-input" autocomplete="name" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label" for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+                        <label class="form-label" for="email">Work email *</label>
+                        <input type="email" id="email" name="email" class="form-input" autocomplete="email" required>
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label" for="email">Work Email *</label>
-                    <input type="email" id="email" name="email" class="form-input" autocomplete="email" required>
-                </div>
-
-                <input type="hidden" id="interest" name="program" value="recommend">
-
-                <div class="form-group">
-                    <label class="form-label" for="workplace-situation">What needs to work better for your team right now? *</label>
-                    <textarea id="workplace-situation" name="workplace_situation" class="form-textarea" rows="5"
-                        placeholder="Examples: people rush in meetings; new managers struggle with pushback; or the team needs an offsite reset."
-                        required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn--primary btn--large" style="width: 100%;">
-                    Send My Workshop Request
-                </button>
-                <p class="corporate-form__microcopy">No obligation. BRAT will reply with a recommended format,
-                    starting price and available dates. Prefer email? <a href="mailto:hello@bratcommunity.com">hello@bratcommunity.com</a></p>
-            </form>
+                    <input type="hidden" id="interest" name="program" value="recommend">
+                    <div class="form-group">
+                        <label class="form-label" for="workplace-situation">What needs to work better for your team right now? *</label>
+                        <textarea id="workplace-situation" name="workplace_situation" class="form-textarea" rows="5" placeholder="Examples: people rush in meetings; new managers struggle with pushback; the team needs an offsite reset." required></textarea>
+                    </div>
+                    <button type="submit" class="cx-btn">Send my workshop request</button>
+                    <p class="corporate-form__microcopy">No obligation. BRAT replies with a recommended format, starting price and available dates.</p>
+                </form>
+            </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__top">
-                <div class="footer__brand">
-                    <a href="index.html" class="logo">BRAT<span>.</span>Studio</a>
+    <footer class="cx-footer">
+        <div class="cx-wrap">
+            <div class="cx-footer__top">
+                <div class="cx-footer__brand">
+                    <a href="index.html" class="cx-logo">BRAT Studio</a>
                     <p>Practical workplace training to help people feel steady, speak clearly and respond in the moment.</p>
                 </div>
                 <div>
-                    <h4 class="footer__title">Programs</h4>
-                    <ul class="footer__links">
+                    <h4>Programs</h4>
+                    <ul>
                         <li><a href="programs.html">Masterclass</a></li>
                         <li><a href="coaching.html">1:1 Coaching</a></li>
                         <li><a href="corporate.html">Corporate</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="footer__title">Company</h4>
-                    <ul class="footer__links">
+                    <h4>Company</h4>
+                    <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="courses.html">Courses</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-
             </div>
-            <div class="footer__bottom">
-                <p class="footer__copyright">© 2026 BRAT Studio. Toronto, Canada.</p>
-                <div class="footer__social">
+            <div class="cx-footer__bottom">
+                <p>© 2026 BRAT Studio. Toronto, Canada.</p>
+                <div class="cx-footer__social">
                     <a href="https://www.instagram.com/brat.community/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     </a>
                     <a href="https://www.linkedin.com/in/kateryna-bratchyna-172901272/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js?v=20260806-mobile1"></script>
+    <!-- Sticky mobile CTA -->
+    <div class="cx-sticky" id="cx-sticky" aria-hidden="true">
+        <p>Team workshops from CAD 1,500<span>Toronto, GTA or live virtual</span></p>
+        <a href="#inquiry" class="cx-btn" tabindex="-1">Plan a workshop</a>
+    </div>
+
+    <script>
+    (function () {
+        // Mobile navigation
+        var toggle = document.querySelector('.cx-nav-toggle');
+        var nav = document.getElementById('cx-nav');
+        if (toggle && nav) {
+            toggle.addEventListener('click', function () {
+                var open = nav.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+            });
+            nav.addEventListener('click', function (e) {
+                if (e.target.closest('a')) {
+                    nav.classList.remove('is-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.setAttribute('aria-label', 'Open navigation');
+                }
+            });
+        }
+
+        // Situation chooser (facts mirror the program cards below)
+        var programs = {
+            'show-up-ready': { name: 'SHOW UP READY', why: 'One shared pre-meeting routine: settle before the meeting and start without rushing.', meta: '90 minutes · up to 8 participants · onsite or live virtual', price: 'CAD 1,500', cta: 'Plan this workshop', card: 'program-intro' },
+            'ready-real-time': { name: 'READY IN REAL TIME', why: 'The core skills program: open without rushing, make one point easy to follow and get the thread back after an interruption.', meta: 'Two 2.5-hour sessions · up to 8 participants · 14-day follow-up', price: 'CAD 4,800', cta: 'Plan the skills program', card: 'program-ready' },
+            'lead-presence': { name: 'LEAD WITH PRESENCE', why: 'Leaders rehearse one real upcoming conversation: open without circling, hear resistance and keep the decision clear.', meta: 'Two 3-hour sessions · up to 4 leaders · individual reviews', price: 'CAD 8,500', cta: 'Plan leadership training', card: 'program-lead' },
+            'reset-connect': { name: 'RESET & CONNECT', why: 'A low-pressure, structured session that gets people talking beyond their usual circles, without forced fun or forced sharing.', meta: '2 hours · up to 16 participants · onsite or live virtual', price: 'CAD 2,250', cta: 'Plan a team experience', card: 'program-reset' },
+            'real-moment': { name: 'REAL MOMENT LAB', why: 'One approved scenario built around your real event, so the first attempt doesn’t happen live.', meta: 'Full day or two half-days · 6–8 participants', price: 'CAD 8,500', cta: 'Plan a custom lab', card: 'program-custom' }
+        };
+        var buttons = document.querySelectorAll('.cx-option');
+        var el = function (id) { return document.getElementById(id); };
+        function pick(key) {
+            var p = programs[key];
+            if (!p) return;
+            buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.pick === key ? 'true' : 'false'); });
+            el('pick-name').textContent = p.name;
+            el('pick-why').textContent = p.why;
+            el('pick-meta').textContent = p.meta;
+            el('pick-price').innerHTML = 'From ' + p.price + ' <small>+ applicable tax</small>';
+            el('pick-cta').textContent = p.cta;
+            el('pick-cta').dataset.corporateProgram = key;
+            el('pick-details').setAttribute('href', '#' + p.card);
+            document.querySelectorAll('.cx-prog').forEach(function (c) { c.classList.toggle('is-match', c.id === p.card); });
+        }
+        buttons.forEach(function (b) { b.addEventListener('click', function () { pick(b.dataset.pick); }); });
+        pick('show-up-ready');
+
+        // Sticky CTA on phones: hidden over the hero and the form
+        var sticky = el('cx-sticky');
+        var hero = document.querySelector('.cx-hero');
+        var inquiry = el('inquiry');
+        if (sticky && hero && inquiry && 'IntersectionObserver' in window) {
+            var heroVisible = true, formVisible = false;
+            var update = function () { sticky.classList.toggle('is-visible', !heroVisible && !formVisible); };
+            new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }).observe(hero);
+            new IntersectionObserver(function (e) { formVisible = e[0].isIntersecting; update(); }, { rootMargin: '0px 0px -20% 0px' }).observe(inquiry);
+        }
+    })();
+    </script>
+    <!-- Same handler as before: sends the form to the BRAT CRM Google Form and handles program preselection -->
     <script src="js/form-handler.js?v=20260807-offer1"></script>
 </body>
-
 </html>
