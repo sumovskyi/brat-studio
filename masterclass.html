@@ -184,9 +184,11 @@
             ============================================================
             -->
 
-            <div class="schedule-grid" data-animate>
+            <!-- No classes scheduled right now. To publish a new cohort: wrap one or more
+                 schedule-cards (template below) in <div class="schedule-grid" data-animate>,
+                 put it here, update the dates and spots, and remove the schedule-empty message.
 
-                <!-- CLASS 1: February Beginner -->
+            TEMPLATE (past cohorts, kept for reference):
                 <div class="schedule-card" data-status="open">
                     <div class="schedule-card__header">
                         <div>
@@ -225,7 +227,6 @@
                     </div>
                 </div>
 
-                <!-- CLASS 2: March Advanced -->
                 <div class="schedule-card" data-status="few-spots">
                     <div class="schedule-card__header">
                         <div>
@@ -263,16 +264,11 @@
                         <a href="contact.html?class=scenework-mar8" class="btn btn--primary">Register</a>
                     </div>
                 </div>
-
-            </div>
-
-            <!-- No classes message (uncomment when nothing scheduled) -->
-            <!--
-            <div class="schedule-empty">
-                <p style="font-size: 1.25rem; margin-bottom: 1rem;">No classes currently scheduled</p>
-                <p>Join our <a href="contact.html?waitlist=true">waitlist</a> to be notified when new dates are announced.</p>
-            </div>
             -->
+            <div class="schedule-empty" data-animate>
+                <p style="font-size: 1.25rem; margin-bottom: 1rem; color: #1A1A1A !important;">No classes currently scheduled</p>
+                <p style="color: #4A4A4A !important;">Join our <a href="contact.html?waitlist=true" style="color: #0045D6 !important; text-decoration: underline;">waitlist</a> to be notified when new dates are announced.</p>
+            </div>
 
             <div style="text-align: center; margin-top: 3rem;">
                 <p style="color: var(--color-gray-400); margin-bottom: 1rem;">Don't see a date that works?</p>
