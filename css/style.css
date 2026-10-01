@@ -407,6 +407,19 @@ a:hover {
     font-size: var(--text-base);
 }
 
+@media (max-width: 360px) {
+    .btn--large {
+        max-width: 100%;
+        padding-inline: var(--space-6);
+        white-space: normal;
+        text-align: center;
+    }
+
+    .hero__content {
+        min-width: 0;
+    }
+}
+
 /* -------------------- HEADER / NAVIGATION -------------------- */
 .header {
     position: fixed;
@@ -660,7 +673,7 @@ a:hover {
 /* -------------------- BRAT PHILOSOPHY SECTION -------------------- */
 .brat-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--space-6);
 }
 
@@ -698,6 +711,7 @@ a:hover {
 .brat-card__letter svg {
     height: 100%;
     width: auto;
+    max-width: 100%;
     fill: currentColor;
     display: block;
 }
@@ -725,9 +739,6 @@ a:hover {
         padding: var(--space-6) var(--space-4) var(--space-4);
     }
 
-    .brat-grid .brat-card__letter svg {
-        max-width: 100%;
-    }
 }
 
 /* -------------------- CARDS -------------------- */
