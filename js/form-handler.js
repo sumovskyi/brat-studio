@@ -165,19 +165,9 @@ function initFormHandler(form) {
 
             // Check if Google Script URL is configured
             if (CONFIG.GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
-                console.log('Form data (demo mode):', data);
-
-                showSuccess(form, 'Demo mode: Form submitted!');
-
-                const demoRedirect = CONFIG.SUCCESS_REDIRECTS[form.id];
-                if (demoRedirect) {
-                    setTimeout(() => {
-                        window.location.href = demoRedirect;
-                    }, 1500);
-                } else {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = originalText;
-                }
+                showError(form, 'Online registration is unavailable. Your details have not been sent. Please email hello@bratcommunity.com with your program and preferred date.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
                 return;
             }
 
