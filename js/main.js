@@ -208,18 +208,16 @@ function initRegistrationModal() {
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    // Here you would send to your backend/Google Sheets
-    console.log('Masterclass Registration:', data);
-
-    // Show success message
-    alert(`Thank you for registering for "${data.program}"! We'll contact you within 24 hours to confirm your spot.`);
-
-    // Close modal and reset form
-    closeModal();
-    form.reset();
+    // This legacy modal has no delivery endpoint. Preserve the details and
+    // give a usable contact route instead of confirming an unsent request.
+    let message = form.querySelector('.registration-status');
+    if (!message) {
+      message = document.createElement('p');
+      message.className = 'registration-status';
+      message.setAttribute('role', 'alert');
+      form.appendChild(message);
+    }
+    message.textContent = 'Online registration is unavailable. Your details have not been sent. Please email hello@bratcommunity.com with your program and preferred date.';
   });
 }
 
